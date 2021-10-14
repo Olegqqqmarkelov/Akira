@@ -15,25 +15,12 @@ public class KeyboardInput : MonoBehaviour
 
     private void LateUpdate()
     {
-        FlipControl();
         Moves();
-    }
-
-    private void FlipControl()
-    {
-        Vector3 CharterScale = _charterSprite.transform.localScale;
-        if(Input.GetAxis("Horizontal") < 0){
-            CharterScale.x = -3;
-        }
-        if(Input.GetAxis("Horizontal") > 0){
-            CharterScale.x = 3;
-        }
-        CharterScale.y = 3;
-        _charterSprite.transform.localScale = CharterScale;
     }
 
     private void Moves()
     {
+        Vector3 CharterScale = _charterSprite.transform.localScale;
         float _speed = 2.5f;
         float vertical;
         float horizontal;
@@ -52,14 +39,24 @@ public class KeyboardInput : MonoBehaviour
 
         if(Input.GetKey(KeyCode.A) && trigerValueLeft){
             horizontal = -1;
+            CharterScale.x = -3;
         } else if(Input.GetKey(KeyCode.D) && trigerValueRight){
             horizontal = 1;
+            CharterScale.x = 3;
         } else {horizontal = 0;}
+
+        if(Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))
+        {
+            horizontal = 0;
+        }
 
         if(Input.GetKey(KeyCode.LeftShift))
         {
             _speed = 3f;
         }
+
+        CharterScale.y = 3;
+        _charterSprite.transform.localScale = CharterScale;
 
         _movement.Move(new Vector3(horizontal, 0, vertical), _speed);
     }
