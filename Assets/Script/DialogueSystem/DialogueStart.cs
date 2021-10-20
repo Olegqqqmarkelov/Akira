@@ -17,6 +17,7 @@ public class DialogueStart : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E) && isActive)
         {
+            dialogueLetter.SetActive(false);
             isActive = false;
             openDialogue.Open();
         }
