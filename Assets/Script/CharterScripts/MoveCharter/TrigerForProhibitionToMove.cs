@@ -6,7 +6,8 @@ public class TrigerForProhibitionToMove : MonoBehaviour
     public bool _boolForWalk = true;
     
     private void OnTriggerEnter(Collider other) {
-        _boolForWalk = false;
+        if(other.isTrigger != true)
+            _boolForWalk = false;
     }
     
     private void OnTriggerExit(Collider other) {
