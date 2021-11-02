@@ -48,9 +48,11 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Script\CameraScripts\FollowCamera\Camera.cs" />
-     <Compile Include="Assets\Script\DialogueSystem\DialogueStart.cs" />
+     <Compile Include="Assets\MVC-Dialog\Controller\DialogueStart.cs" />
      <Compile Include="Assets\Script\DialogueSystem\ReadText.cs" />
-     <Compile Include="Assets\Script\DialogueSystem\OpenDialogue.cs" />
+     <Compile Include="Assets\MVC-Dialog\Controller\OpenDialogue.cs" />
+     <Compile Include="Assets\MVC-Dialog\Models\CharterDialogModel.cs" />
+     <Compile Include="Assets\MVC-Dialog\Controller\TextControler.cs" />
      <Compile Include="Assets\Script\CharterScripts\MoveCharter\KeyboardInput.cs" />
      <Compile Include="Assets\Script\CharterScripts\MoveCharter\PhysicsMovement.cs" />
      <Compile Include="Assets\Script\DialogueSystem\Quest.cs" />

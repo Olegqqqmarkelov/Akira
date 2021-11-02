@@ -30,9 +30,4 @@ public class ReadText : MonoBehaviour
             Debug.Log(q.id + " " + q.name);
         }
     }
-
-    void Update()
-    {
-        
-    }
 }
