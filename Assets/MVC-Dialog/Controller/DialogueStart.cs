@@ -22,7 +22,7 @@ public class DialogueStart : MonoBehaviour
             openDialogue.Open();
         }
     }
-    
+
     private void OnTriggerExit(Collider other) {
         dialogueLetter.SetActive(false);
         openDialogue.Close();
