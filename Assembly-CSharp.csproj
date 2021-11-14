@@ -51,13 +51,14 @@
      <Compile Include="Assets\MVC-Dialog\Controller\DialogueStart.cs" />
      <Compile Include="Assets\Script\DialogueSystem\ReadText.cs" />
      <Compile Include="Assets\MVC-Dialog\Controller\OpenDialogue.cs" />
+     <Compile Include="Assets\MVC-Dialog\Controller\TextController.cs" />
      <Compile Include="Assets\MVC-Dialog\Models\CharterDialogModel.cs" />
-     <Compile Include="Assets\MVC-Dialog\Controller\TextControler.cs" />
-     <Compile Include="Assets\Script\CharterScripts\MoveCharter\KeyboardInput.cs" />
-     <Compile Include="Assets\Script\CharterScripts\MoveCharter\PhysicsMovement.cs" />
+     <Compile Include="Assets\Script\PlayerScripts\MovePlayer\KeyboardInput.cs" />
+     <Compile Include="Assets\Script\PlayerScripts\MovePlayer\PhysicsMovement.cs" />
      <Compile Include="Assets\Script\DialogueSystem\Quest.cs" />
-     <Compile Include="Assets\Script\CharterScripts\MoveCharter\TrigerForProhibitionToMove.cs" />
-     <Compile Include="Assets\Script\CharterScripts\MoveCharter\SurfaceSlider.cs" />
+     <Compile Include="Assets\Script\PlayerScripts\MovePlayer\TrigerForProhibitionToMove.cs" />
+     <Compile Include="Assets\Script\SaveScript\PlayerData.cs" />
+     <Compile Include="Assets\Script\PlayerScripts\MovePlayer\SurfaceSlider.cs" />
      <None Include="Assets\Shader\ForCharter\ShadowsForSprite.shader" />
  <Reference Include="UnityEngine">
  <HintPath>D:/Unity/Hub/Editor/2020.3.18f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
