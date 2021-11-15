@@ -53,10 +53,13 @@
      <Compile Include="Assets\MVC-Dialog\Controller\OpenDialogue.cs" />
      <Compile Include="Assets\MVC-Dialog\Controller\TextController.cs" />
      <Compile Include="Assets\MVC-Dialog\Models\CharterDialogModel.cs" />
+     <Compile Include="Assets\Script\SaveScript\Save.cs" />
+     <Compile Include="Assets\Script\PlayerScripts\PlayerData\PlayerD.cs" />
      <Compile Include="Assets\Script\PlayerScripts\MovePlayer\KeyboardInput.cs" />
      <Compile Include="Assets\Script\PlayerScripts\MovePlayer\PhysicsMovement.cs" />
      <Compile Include="Assets\Script\DialogueSystem\Quest.cs" />
      <Compile Include="Assets\Script\PlayerScripts\MovePlayer\TrigerForProhibitionToMove.cs" />
+     <Compile Include="Assets\Script\SaveScript\SaveSystem.cs" />
      <Compile Include="Assets\Script\SaveScript\PlayerData.cs" />
      <Compile Include="Assets\Script\PlayerScripts\MovePlayer\SurfaceSlider.cs" />
      <None Include="Assets\Shader\ForCharter\ShadowsForSprite.shader" />

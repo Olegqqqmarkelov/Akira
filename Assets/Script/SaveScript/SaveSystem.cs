@@ -1,8 +1,8 @@
+using System.IO;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-using UnityEngine;
 
 public class SaveSystem : MonoBehaviour
 {
@@ -10,7 +10,6 @@ public class SaveSystem : MonoBehaviour
     
     public void SaveSpawn(int IdSaveZone)
     {
-        Debug.Log(IdSaveZone);
         PlayerData pd = new PlayerData(player);
         pd.saveSpawn = IdSaveZone;
 
@@ -23,7 +22,22 @@ public class SaveSystem : MonoBehaviour
         stream.Close();
     }
 
-    // public PlayerData LoadSaveData()
-    // {
-    // }
+    public PlayerData LoadSaveData()
+    {
+        string path = Application.persistentDataPath + "/player.fun";
+        if(File.Exists(path))
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream stream = new FileStream(path, FileMode.Open);
+
+            PlayerData data = formatter.Deserialize(stream) as PlayerData;
+            stream.Close();
+
+            return data;
+        }else{
+            Debug.LogError("Save file not found in" + path);
+            return null;
+        }
+    }
+
 }

@@ -16,7 +16,8 @@ public class TextController : MonoBehaviour
 
     void Start()
     {
-        
+        RoadText("123");
+        WriteText();
     }
 
     void RoadText(string NameFile)
@@ -40,15 +41,13 @@ public class TextController : MonoBehaviour
 
     void WriteText()
     {
-        foreach(DialogModel d in dialogs)
-        {
-            Debug.Log(d.id + " " + d.name + " " + d.dialog);
-        }
+        // foreach(DialogModel d in dialogs)
+        // {
+        //     Debug.Log(d.id + " " + d.name + " " + d.dialog);
+        // }
+        // Debug.Log("sad");
+        Debug.Log(dialogs[1].name);
     }
 
 
-    void Update()
-    {
-        
-    }
 }
