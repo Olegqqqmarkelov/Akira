@@ -13,7 +13,7 @@ public class DialogModel
 
 public class DialogueStart : MonoBehaviour
 {
-    public int asd = 1;
+    private int idDialgo = 0;
 
     [SerializeField] private Text dialogName;
     [SerializeField] private Text dialogText;
@@ -33,17 +33,15 @@ public class DialogueStart : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E) && isActive)
+        if(Input.GetKeyDown(KeyCode.E))
         {
             dialogueLetter.SetActive(false);
-            isActive = false;
+            
 
             if(dialogs.Count == 0){
                 LoadText(_playerData.chapter);
-                WriteText(asd);
-            }else{WriteText(asd);}
-            WriteText(asd);
-            asd++;
+            }else{WriteText(idDialgo++);}
+            WriteText(idDialgo++);
 
             openDialogue.Open();
         }
@@ -71,7 +69,17 @@ public class DialogueStart : MonoBehaviour
     public void WriteText(int asd)
     {
         dialogName.text = dialogs[asd].name;
-        dialogText.text = dialogs[asd].dialog;
+        dialogText.text = "";
+        StartCoroutine(TextCoroutine(dialogs[asd].dialog));
+    }
+
+    public IEnumerator TextCoroutine(string text) 
+    {
+        foreach(char c in text) 
+        {
+            dialogText.text += c.ToString();
+            yield return new WaitForSeconds(0.1f);
+        }
     }
 
     private void OnTriggerExit(Collider other) {
