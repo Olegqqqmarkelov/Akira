@@ -219,6 +219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 25
+  IdNpc: 0
   Name: NPC_TEST
   hp: 100
 --- !u!4 &33336634
@@ -1181,6 +1182,7 @@ MonoBehaviour:
   level: 0
   chapter: 0
   dialogId: 0
+  dialogTrueIdNPC: 0
   hp: 100
   saveSpawn: 0
 --- !u!33 &1000791563
@@ -2168,20 +2170,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
+    m_FontSize: 25
+    m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_MinSize: 2
+    m_MaxSize: 205
     m_Alignment: 0
-    m_AlignByGeometry: 0
+    m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '
-
-'
+  m_Text: asdasd
 --- !u!222 &1929482747
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2256,7 +2256,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -262, y: 35}
+  m_AnchoredPosition: {x: -262, y: 34}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2057265744
@@ -2281,10 +2281,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
+    m_FontSize: 27
+    m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 3
     m_AlignByGeometry: 0
@@ -2292,7 +2292,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Eror: "dialog file" not found :L'
+  m_Text: Name
 --- !u!222 &2057265745
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2360,7 +2360,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 909c2dc825cda0740813c5e9b8f405c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  asd: 0
   dialogName: {fileID: 2057265744}
   dialogText: {fileID: 1929482746}
   _playerData: {fileID: 1000791562}

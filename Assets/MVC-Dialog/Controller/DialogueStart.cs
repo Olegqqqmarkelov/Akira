@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 public class DialogModel
 {
@@ -13,7 +14,7 @@ public class DialogModel
 
 public class DialogueStart : MonoBehaviour
 {
-    private int idDialgo = 0;
+    private int idDialog = 0;
 
     [SerializeField] private Text dialogName;
     [SerializeField] private Text dialogText;
@@ -24,26 +25,31 @@ public class DialogueStart : MonoBehaviour
 
     [SerializeField] private GameObject dialogueLetter;
     [SerializeField] private OpenDialogue openDialogue;
-    private bool isActive;
 
     private void OnTriggerEnter(Collider other) {
-        dialogueLetter.SetActive(true);
-        isActive = true;
+        if(_npcData.IdNpc == _playerData.dialogTrueIdNPC){
+            dialogueLetter.SetActive(true);
+        }
     }
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E))
-        {
-            dialogueLetter.SetActive(false);
-            
+        if(_npcData.IdNpc == _playerData.dialogTrueIdNPC){
+            if(Input.GetKeyDown(KeyCode.E))
+            {
+                dialogueLetter.SetActive(false);
+                
+                try{
+                    if(dialogs.Count == 0){
+                        LoadText(_playerData.chapter);
+                    }else{WriteText(idDialog++);}
+                    WriteText(idDialog++);
 
-            if(dialogs.Count == 0){
-                LoadText(_playerData.chapter);
-            }else{WriteText(idDialgo++);}
-            WriteText(idDialgo++);
-
-            openDialogue.Open();
+                    openDialogue.Open();
+                }catch{
+                    openDialogue.Close();
+                }
+            }
         }
     }
 
@@ -66,25 +72,47 @@ public class DialogueStart : MonoBehaviour
         }
     }
 
-    public void WriteText(int asd)
+    public void WriteText(int _id)
     {
-        dialogName.text = dialogs[asd].name;
+        dialogName.text = dialogs[_id].name;
+
         dialogText.text = "";
-        StartCoroutine(TextCoroutine(dialogs[asd].dialog));
+        StartCoroutine(TextWriteCharByChar(VoidRegex(dialogs[_id].dialog), dialogText));
     }
 
-    public IEnumerator TextCoroutine(string text) 
+    public IEnumerator TextWriteCharByChar(string text, Text _lineOfText) 
     {
         foreach(char c in text) 
         {
-            dialogText.text += c.ToString();
+            _lineOfText.text += c.ToString();
             yield return new WaitForSeconds(0.1f);
         }
+    }
+
+    public string VoidRegex(string text)
+    {
+        string new_text;
+
+        string patternVirgule = "<virgule/>";
+        string targetClear = "";
+        string targetVirgule = ",";
+
+        Regex regex = new Regex(patternVirgule);
+
+        new_text = regex.Replace(text, targetVirgule);
+
+        if (new_text.StartsWith("<hs/>"))
+        {
+            string patternHaveScript = "<hs/>";
+            Regex regexHS = new Regex(patternHaveScript);
+
+            new_text = regexHS.Replace(new_text, targetClear);
+        }
+        return new_text;
     }
 
     private void OnTriggerExit(Collider other) {
         dialogueLetter.SetActive(false);
         openDialogue.Close();
-        isActive = false;
     }
 }

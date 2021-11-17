@@ -5,6 +5,7 @@ using UnityEngine;
 public class NPCData : MonoBehaviour
 {
     public int level;
+    public int IdNpc;
     public string Name;
     public int hp;
 }
