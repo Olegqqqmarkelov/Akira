@@ -25,31 +25,36 @@ public class DialogueStart : MonoBehaviour
 
     [SerializeField] private GameObject dialogueLetter;
     [SerializeField] private OpenDialogue openDialogue;
+    private bool _isActive;
 
     private void OnTriggerEnter(Collider other) {
         if(_npcData.IdNpc == _playerData.dialogTrueIdNPC){
             dialogueLetter.SetActive(true);
+            _isActive = true;
         }
     }
 
     void Update()
     {
-        if(_npcData.IdNpc == _playerData.dialogTrueIdNPC){
-            if(Input.GetKeyDown(KeyCode.E))
-            {
-                dialogueLetter.SetActive(false);
-                
-                try{
+        if(Input.GetKeyDown(KeyCode.E) && _isActive && _npcData.IdNpc == _playerData.dialogTrueIdNPC)
+        {
+            dialogueLetter.SetActive(false);
+            
+            try{
+                if(_npcData.IdNpc != _playerData.dialogTrueIdNPC)
+                {
+                    openDialogue.Close();
+                } else {
                     if(dialogs.Count == 0){
                         LoadText(_playerData.chapter);
-                    }else{WriteText(idDialog++);}
+                    }
                     WriteText(idDialog++);
 
                     openDialogue.Open();
-                }catch{
-                    openDialogue.Close();
                 }
-            }
+            }catch{
+                openDialogue.Close();
+            }    
         }
     }
 
@@ -106,6 +111,19 @@ public class DialogueStart : MonoBehaviour
             string patternHaveScript = "<hs/>";
             Regex regexHS = new Regex(patternHaveScript);
 
+            Match match = Regex.Match(new_text, "<ndn>(.*?)</ndn>");
+            if(match.Groups[1].Value != null)
+            {
+
+                string patternNewDialogNPC = "<ndn>(.*?)</ndn>";
+                Regex regexNDN = new Regex(patternNewDialogNPC);
+                _isActive = false;
+
+                new_text = regexNDN.Replace(new_text, targetClear);
+
+                _playerData.dialogTrueIdNPC = Convert.ToInt32(match.Groups[1].Value);
+            }
+
             new_text = regexHS.Replace(new_text, targetClear);
         }
         return new_text;
@@ -113,6 +131,7 @@ public class DialogueStart : MonoBehaviour
 
     private void OnTriggerExit(Collider other) {
         dialogueLetter.SetActive(false);
+        _isActive = false;
         openDialogue.Close();
     }
 }

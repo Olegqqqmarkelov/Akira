@@ -20,6 +20,7 @@ public class PlayerD : MonoBehaviour
         PlayerData data = _saveSystem.LoadSaveData();
 
         level = data.level;
+        dialogTrueIdNPC = data.dialogTrueIdNPC;
         hp = data.hp;
         saveSpawn = data.saveSpawn;
     }

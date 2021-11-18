@@ -8,6 +8,7 @@ public class PlayerData
     public int level;
     public int chapter = 0;
     public int dialogId = 0;
+    public int dialogTrueIdNPC;
     public int hp;
     public int saveSpawn;
 
@@ -16,6 +17,7 @@ public class PlayerData
         level = player.level;
         chapter = player.chapter;
         dialogId = player.dialogId;
+        dialogTrueIdNPC = player.dialogTrueIdNPC;
         hp = player.hp;
         saveSpawn = player.saveSpawn;
     }
