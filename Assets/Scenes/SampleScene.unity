@@ -809,6 +809,7 @@ MonoBehaviour:
   dialogText: {fileID: 1929482746}
   _playerData: {fileID: 1000791562}
   _npcData: {fileID: 1131215697}
+  _playerMove: {fileID: 1000791565}
   dialogueLetter: {fileID: 1986702481}
   openDialogue: {fileID: 1146574895}
 --- !u!135 &730472675
@@ -1344,6 +1345,7 @@ MonoBehaviour:
   _trigerBack: {fileID: 1568798789}
   _trigerLeft: {fileID: 1486165190}
   _trigerRight: {fileID: 1012183211}
+  moveIsActive: 1
 --- !u!114 &1000791566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2639,6 +2641,7 @@ MonoBehaviour:
   dialogText: {fileID: 1929482746}
   _playerData: {fileID: 1000791562}
   _npcData: {fileID: 33336633}
+  _playerMove: {fileID: 1000791565}
   dialogueLetter: {fileID: 564865351}
   openDialogue: {fileID: 1146574895}
 --- !u!23 &2109548750

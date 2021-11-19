@@ -22,6 +22,7 @@ public class DialogueStart : MonoBehaviour
 
     [SerializeField] private PlayerD _playerData;
     [SerializeField] private NPCData _npcData;
+    [SerializeField] private KeyboardInput _playerMove;
 
     [SerializeField] private GameObject dialogueLetter;
     [SerializeField] private OpenDialogue openDialogue;
@@ -39,6 +40,7 @@ public class DialogueStart : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E) && _isActive && _npcData.IdNpc == _playerData.dialogTrueIdNPC)
         {
             dialogueLetter.SetActive(false);
+            _playerMove.moveIsActive = false;
             
             try{
                 if(_npcData.IdNpc != _playerData.dialogTrueIdNPC)
@@ -118,6 +120,7 @@ public class DialogueStart : MonoBehaviour
                 string patternNewDialogNPC = "<ndn>(.*?)</ndn>";
                 Regex regexNDN = new Regex(patternNewDialogNPC);
                 _isActive = false;
+                _playerMove.moveIsActive = true;
 
                 new_text = regexNDN.Replace(new_text, targetClear);
 

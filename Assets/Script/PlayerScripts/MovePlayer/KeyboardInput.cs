@@ -11,11 +11,14 @@ public class KeyboardInput : MonoBehaviour
     [SerializeField] private GameObject _trigerBack;
     [SerializeField] private GameObject _trigerLeft;
     [SerializeField] private GameObject _trigerRight;
+    public bool moveIsActive = true;
 
 
     private void LateUpdate()
     {
-        Moves();
+        if(moveIsActive){
+            Moves();
+        }
     }
 
     private void Moves()
@@ -29,7 +32,6 @@ public class KeyboardInput : MonoBehaviour
         bool trigerValueBack = _trigerBack.GetComponent<TrigerForProhibitionToMove>()._boolForWalk;
         bool trigerValueLeft = _trigerLeft.GetComponent<TrigerForProhibitionToMove>()._boolForWalk;
         bool trigerValueRight = _trigerRight.GetComponent<TrigerForProhibitionToMove>()._boolForWalk;
-
 
         if(Input.GetKey(KeyCode.W) && trigerValueForward){
             vertical = 1;
@@ -54,7 +56,6 @@ public class KeyboardInput : MonoBehaviour
         {
             _speed = 3f;
         }
-
         CharterScale.y = 3;
         _charterSprite.transform.localScale = CharterScale;
 
