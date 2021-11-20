@@ -221,6 +221,7 @@ MonoBehaviour:
   level: 25
   IdNpc: 1
   Name: NPC_TEST
+  dialogNumber: 1
   hp: 100
 --- !u!4 &33336634
 Transform:
@@ -1295,7 +1296,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _saveSystem: {fileID: 1611717773}
   level: 0
-  chapter: 0
   dialogId: 0
   dialogTrueIdNPC: 0
   hp: 100
@@ -1596,6 +1596,7 @@ MonoBehaviour:
   level: 25
   IdNpc: 2
   Name: NPC_TEST
+  dialogNumber: 2
   hp: 100
 --- !u!4 &1131215698
 Transform:
