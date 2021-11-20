@@ -8,7 +8,6 @@ public class PlayerD : MonoBehaviour
     [SerializeField] SaveSystem _saveSystem;
 
     public int level = 0;
-    public int chapter = 0;
     public int dialogId = 0;
     public int dialogTrueIdNPC = 0;
     public int hp = 100;

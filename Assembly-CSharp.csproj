@@ -62,6 +62,7 @@
      <Compile Include="Assets\Script\SaveScript\SaveSystem.cs" />
      <Compile Include="Assets\Script\SaveScript\PlayerData.cs" />
      <Compile Include="Assets\Script\PlayerScripts\MovePlayer\SurfaceSlider.cs" />
+     <None Include="Assets\Dialog Command.txt" />
      <None Include="Assets\Shader\ForCharter\ShadowsForSprite.shader" />
  <Reference Include="UnityEngine">
  <HintPath>D:/Unity/Hub/Editor/2020.3.18f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
