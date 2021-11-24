@@ -26,13 +26,12 @@ public class KeyboardInput : MonoBehaviour
     {
         if(moveIsActive){
             Moves();
-
-            if(active)
-            {
-                StartParticls();
-            }else{
-                StopParticls();
-            }
+        }
+        if(active && moveIsActive)
+        {
+            StartParticls();
+        }else{
+            StopParticls();
         }
     }
 
