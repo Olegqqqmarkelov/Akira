@@ -49,6 +49,7 @@ public class DialogueStart : MonoBehaviour
                 WriteText(idDialog++);
             }catch{
                 openDialogue.Close();
+                dialogs.Clear();
             }   
             openDialogue.Open(); 
         }
@@ -60,7 +61,7 @@ public class DialogueStart : MonoBehaviour
 
         string[] data = dialogsData.text.Split(new char[] {'\n'});
 
-        for (int i = 0; i < data.Length; i++)
+        for (int i = 1; i < data.Length; i++)
         {
             string[] row = data[i].Split(new char[] { ',' });
 
@@ -81,13 +82,19 @@ public class DialogueStart : MonoBehaviour
         StartCoroutine(TextWriteCharByChar(VoidRegex(dialogs[_id].dialog), dialogText));
     }
 
-    public IEnumerator TextWriteCharByChar(string text, Text _lineOfText) 
+    private IEnumerator TextWriteCharByChar(string text, Text _lineForText) 
     {
-        foreach(char c in text) 
+        foreach(char _char in text) 
         {
-            _lineOfText.text += c.ToString();
+            _lineForText.text += _char.ToString();
             yield return new WaitForSeconds(0.1f);
         }
+
+        // for(int i = 0; i < text.ToCharArray().Length; i++)
+        // {
+        //     _lineForText.text += text[i];
+        //     yield return new WaitForSeconds(0.1f);
+        // }
     }
 
     public string VoidRegex(string text)
