@@ -27,7 +27,8 @@ public class DialogueStart : MonoBehaviour
 
     private bool _isActive;
     private int idDialog = 0;
-
+    private int lastIdDialog;
+    private IEnumerator coroutine;
 
     private void OnTriggerEnter(Collider other) {
         if(_npcData.IdNpc == _playerData.dialogTrueIdNPC){
@@ -42,7 +43,11 @@ public class DialogueStart : MonoBehaviour
         {
             dialogueLetter.SetActive(false);
             _playerMove.moveIsActive = false;
-            
+
+            try{
+                StopWriteText();
+            }catch{};
+
             try{
                 if(dialogs.Count == 0)
                     LoadText(_playerData.dialogTrueIdNPC);
@@ -55,7 +60,7 @@ public class DialogueStart : MonoBehaviour
         }
     }
 
-    public void LoadText(int NameFile)
+    private void LoadText(int NameFile)
     {
         TextAsset dialogsData = Resources.Load<TextAsset>("DialogData/Dialog" + NameFile.ToString());
 
@@ -74,30 +79,33 @@ public class DialogueStart : MonoBehaviour
         }
     }
 
-    public void WriteText(int _id)
+    private void WriteText(int _id)
     {
         dialogName.text = dialogs[_id].name;
 
         dialogText.text = "";
-        StartCoroutine(TextWriteCharByChar(VoidRegex(dialogs[_id].dialog), dialogText));
+        coroutine = TextWriteCharByChar(VoidRegex(dialogs[_id].dialog), dialogText);
+        StartCoroutine(coroutine);
+    }
+
+    private void StopWriteText()
+    {
+        StopCoroutine(coroutine);
     }
 
     private IEnumerator TextWriteCharByChar(string text, Text _lineForText) 
     {
         foreach(char _char in text) 
         {
-            _lineForText.text += _char.ToString();
+            WriteChar(_char, _lineForText);
             yield return new WaitForSeconds(0.1f);
         }
-
-        // for(int i = 0; i < text.ToCharArray().Length; i++)
-        // {
-        //     _lineForText.text += text[i];
-        //     yield return new WaitForSeconds(0.1f);
-        // }
+        lastIdDialog = idDialog;
     }
 
-    public string VoidRegex(string text)
+    private void WriteChar(char _char, Text _lineForText) => _lineForText.text += _char.ToString();
+
+    private string VoidRegex(string text)
     {
         string new_text;
 
