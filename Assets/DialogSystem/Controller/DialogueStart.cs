@@ -27,7 +27,7 @@ public class DialogueStart : MonoBehaviour
 
     private bool _isActive;
     private int idDialog = 0;
-    private int lastIdDialog;
+    private float speedOfText = 0.075f;
     private IEnumerator coroutine;
 
     private void OnTriggerEnter(Collider other) {
@@ -84,6 +84,7 @@ public class DialogueStart : MonoBehaviour
         dialogName.text = dialogs[_id].name;
 
         dialogText.text = "";
+        speedOfText = 0.075f;
         coroutine = TextWriteCharByChar(VoidRegex(dialogs[_id].dialog), dialogText);
         StartCoroutine(coroutine);
     }
@@ -92,13 +93,10 @@ public class DialogueStart : MonoBehaviour
     {
         foreach(char _char in text) 
         {
-            WriteChar(_char, _lineForText);
-            yield return new WaitForSeconds(0.1f);
+            _lineForText.text += _char.ToString();
+            yield return new WaitForSeconds(speedOfText);
         }
-        lastIdDialog = idDialog;
     }
-
-    private void WriteChar(char _char, Text _lineForText) => _lineForText.text += _char.ToString();
 
     private string VoidRegex(string text)
     {
@@ -118,25 +116,40 @@ public class DialogueStart : MonoBehaviour
             Regex regexHS = new Regex(patternHaveScript);
 
             Match match = Regex.Match(new_text, "<ndn>(.*?)</ndn>");
-            if(match.Groups[1].Value != null)
+            if(Convert.ToString(match).StartsWith("<ndn>"))
             {
-
                 string patternNewDialogNPC = "<ndn>(.*?)</ndn>";
                 Regex regexNDN = new Regex(patternNewDialogNPC);
                 _isActive = false;
                 _playerMove.moveIsActive = true;
 
-                new_text = regexNDN.Replace(new_text, targetClear);
+                new_text = regexNDN.Replace(new_text, "");
 
                 _playerData.dialogTrueIdNPC = Convert.ToInt32(match.Groups[1].Value);
             }
 
+            Match match2 = Regex.Match(new_text, "<st>(.*?)</st>");
+            if(Convert.ToString(match2).StartsWith("<st>"))
+            {
+                Debug.Log(match2.Groups[1].Value);
+                string patternSpeedOfText = "<st>(.*?)</st>";
+                Regex regexST = new Regex(patternSpeedOfText);
+
+                new_text = regexST.Replace(new_text, "");
+
+                speedOfText = float.Parse(match2.Groups[1].Value) / 100;
+            }
+            
             new_text = regexHS.Replace(new_text, targetClear);
         }
         return new_text;
     }
 
     private void OnTriggerExit(Collider other) {
+        try{
+            StopCoroutine(coroutine);
+        }catch{};
+
         dialogueLetter.SetActive(false);
         _isActive = false;
         openDialogue.Close();
