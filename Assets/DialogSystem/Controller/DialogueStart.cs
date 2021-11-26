@@ -45,7 +45,7 @@ public class DialogueStart : MonoBehaviour
             _playerMove.moveIsActive = false;
 
             try{
-                StopWriteText();
+                StopCoroutine(coroutine);
             }catch{};
 
             try{
@@ -86,11 +86,6 @@ public class DialogueStart : MonoBehaviour
         dialogText.text = "";
         coroutine = TextWriteCharByChar(VoidRegex(dialogs[_id].dialog), dialogText);
         StartCoroutine(coroutine);
-    }
-
-    private void StopWriteText()
-    {
-        StopCoroutine(coroutine);
     }
 
     private IEnumerator TextWriteCharByChar(string text, Text _lineForText) 
