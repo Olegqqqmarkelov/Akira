@@ -1,0 +1,43 @@
+{
+  "name": "com.unity.timeline",
+  "displayName": "Timeline",
+  "version": "1.5.2",
+  "unity": "2019.3",
+  "keywords": [
+    "unity",
+    "animation",
+    "editor",
+    "timeline",
+    "tools"
+  ],
+  "description": "Use Unity Timeline to create cinematic content, game-play sequences, audio sequences, and complex particle effects.",
+  "dependencies": {
+    "com.unity.modules.director": "1.0.0",
+    "com.unity.modules.animation": "1.0.0",
+    "com.unity.modules.audio": "1.0.0",
+    "com.unity.modules.particlesystem": "1.0.0"
+  },
+  "relatedPackages": {
+    "com.unity.timeline.tests": "1.5.2"
+  },
+  "upmCi": {
+    "footprint": "cd28496aa172008deba040e73dbe0c0b67c6660b"
+  },
+  "repository": {
+    "url": "https://github.cds.internal.unity3d.com/unity/com.unity.timeline.git",
+    "type": "git",
+    "revision": "7bdad7882133452ed8b2cd5bfca556726d3e7a64"
+  },
+  "samples": [
+    {
+      "displayName": "Customization Samples",
+      "description": "This sample demonstrates how to create custom timeline tracks, clips, markers and actions.",
+      "path": "Samples~/Customization"
+    },
+    {
+      "displayName": "Gameplay Sequence Demo",
+      "description": "This sample demonstrates how Timeline can be used to create a small in-game moment, using built-in Timeline tracks.",
+      "path": "Samples~/GameplaySequenceDemo"
+    }
+  ]
+}
