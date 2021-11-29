@@ -642,8 +642,11 @@
  <Reference Include="Unity.VisualStudio.Editor">
  <HintPath>D:/Projects Unity/Akira/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
  </Reference>
- <Reference Include="Unity.Timeline.Editor">
- <HintPath>D:/Projects Unity/Akira/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ <Reference Include="Autodesk.Fbx.Editor">
+ <HintPath>D:/Projects Unity/Akira/Library/ScriptAssemblies/Autodesk.Fbx.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Formats.Fbx.Editor">
+ <HintPath>D:/Projects Unity/Akira/Library/ScriptAssemblies/Unity.Formats.Fbx.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
  <HintPath>D:/Projects Unity/Akira/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
@@ -651,23 +654,14 @@
  <Reference Include="Unity.TextMeshPro">
  <HintPath>D:/Projects Unity/Akira/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
- <Reference Include="Unity.Mathematics.Editor">
- <HintPath>D:/Projects Unity/Akira/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Common.Runtime">
- <HintPath>D:/Projects Unity/Akira/Library/ScriptAssemblies/Unity.2D.Common.Runtime.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Path.Editor">
- <HintPath>D:/Projects Unity/Akira/Library/ScriptAssemblies/Unity.2D.Path.Editor.dll</HintPath>
+ <Reference Include="Unity.2D.Sprite.Editor">
+ <HintPath>D:/Projects Unity/Akira/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.InternalAPIEditorBridge.001">
  <HintPath>D:/Projects Unity/Akira/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll</HintPath>
  </Reference>
- <Reference Include="Unity.2D.SpriteShape.Editor">
- <HintPath>D:/Projects Unity/Akira/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Sprite.Editor">
- <HintPath>D:/Projects Unity/Akira/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+ <Reference Include="Unity.2D.Path.Editor">
+ <HintPath>D:/Projects Unity/Akira/Library/ScriptAssemblies/Unity.2D.Path.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
  <HintPath>D:/Projects Unity/Akira/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
@@ -678,17 +672,35 @@
  <Reference Include="Unity.Rider.Editor">
  <HintPath>D:/Projects Unity/Akira/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
+ <Reference Include="Autodesk.Fbx">
+ <HintPath>D:/Projects Unity/Akira/Library/ScriptAssemblies/Autodesk.Fbx.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Projects Unity/Akira/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Mathematics">
+ <HintPath>D:/Projects Unity/Akira/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Formats.Fbx.Runtime">
+ <HintPath>D:/Projects Unity/Akira/Library/ScriptAssemblies/Unity.Formats.Fbx.Runtime.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Timeline.Editor">
+ <HintPath>D:/Projects Unity/Akira/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Mathematics.Editor">
+ <HintPath>D:/Projects Unity/Akira/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.Common.Runtime">
+ <HintPath>D:/Projects Unity/Akira/Library/ScriptAssemblies/Unity.2D.Common.Runtime.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.SpriteShape.Editor">
+ <HintPath>D:/Projects Unity/Akira/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.Common.Editor">
  <HintPath>D:/Projects Unity/Akira/Library/ScriptAssemblies/Unity.2D.Common.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.SpriteShape.Runtime">
  <HintPath>D:/Projects Unity/Akira/Library/ScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Mathematics">
- <HintPath>D:/Projects Unity/Akira/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
