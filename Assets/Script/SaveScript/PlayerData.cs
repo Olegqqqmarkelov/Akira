@@ -6,8 +6,10 @@ using System.Collections.Generic;
 public class PlayerData
 {
     public int level;
-    public int dialogId = 0;
+    public int dialogId;
+    public int autoDialogId;
     public int dialogTrueIdNPC;
+    public int autoDialogTrueIdTriger;
     public int hp;
     public int saveSpawn;
 
@@ -15,7 +17,9 @@ public class PlayerData
     {
         level = player.level;
         dialogId = player.dialogId;
+        autoDialogId = player.autoDialogId;
         dialogTrueIdNPC = player.dialogTrueIdNPC;
+        autoDialogTrueIdTriger = player.autoDialogTrueIdTriger;
         hp = player.hp;
         saveSpawn = player.saveSpawn;
     }

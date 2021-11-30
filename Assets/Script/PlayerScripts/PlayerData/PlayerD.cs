@@ -9,7 +9,9 @@ public class PlayerD : MonoBehaviour
 
     public int level = 0;
     public int dialogId = 0;
+    public int autoDialogId = 0;
     public int dialogTrueIdNPC = 0;
+    public int autoDialogTrueIdTriger = 0;
     public int hp = 100;
     public int saveSpawn = 0;  
 
@@ -19,7 +21,10 @@ public class PlayerD : MonoBehaviour
         PlayerData data = _saveSystem.LoadSaveData();
 
         level = data.level;
+        dialogId = data.dialogId;
+        autoDialogId = data.autoDialogId;
         dialogTrueIdNPC = data.dialogTrueIdNPC;
+        autoDialogTrueIdTriger = data.autoDialogTrueIdTriger;
         hp = data.hp;
         saveSpawn = data.saveSpawn;
     }

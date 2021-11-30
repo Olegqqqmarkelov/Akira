@@ -131,7 +131,6 @@ public class DialogueStart : MonoBehaviour
             Match match2 = Regex.Match(new_text, "<st>(.*?)</st>");
             if(Convert.ToString(match2).StartsWith("<st>"))
             {
-                Debug.Log(match2.Groups[1].Value);
                 string patternSpeedOfText = "<st>(.*?)</st>";
                 Regex regexST = new Regex(patternSpeedOfText);
 
