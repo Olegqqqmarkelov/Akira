@@ -12702,7 +12702,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1839563232}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 528.16296, y: 0.67, z: 481.8854}
+  m_LocalPosition: {x: 535.05, y: 0.67, z: 477.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -12726,7 +12726,7 @@ MonoBehaviour:
   _autoDialogData: {fileID: 1839563233}
   _playerMove: {fileID: 1000791565}
   openDialogue: {fileID: 1146574895}
-  closeBeforExitFromTrigger: 0
+  closeBeforExitFromTrigger: 1
 --- !u!1 &1929482744
 GameObject:
   m_ObjectHideFlags: 0

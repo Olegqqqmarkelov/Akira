@@ -24,8 +24,8 @@ public class AutoDialog : MonoBehaviour
     private bool _stopRekurs = false;
     private bool _stopTriger = false;
     private int idDialog = 0;
-    private float speedOfText = 0.075f;
-    private float waitBeforWrite = 3f;
+    private float speedOfText = 0.1f;
+    private float waitBeforWrite = 2f;
     private IEnumerator coroutine;
 
     private void OnTriggerEnter(Collider other) {
@@ -54,6 +54,8 @@ public class AutoDialog : MonoBehaviour
             openDialogue.Open(); 
         }else{
             _stopRekurs = true;
+            dialogs.Clear();
+            openDialogue.Close();
         }
     }
 
@@ -81,8 +83,8 @@ public class AutoDialog : MonoBehaviour
         dialogName.text = dialogs[_id].name;
         
         dialogText.text = "";
-        speedOfText = 0.25f;
-        waitBeforWrite = 3f;
+        speedOfText = 0.1f;
+        waitBeforWrite = 2f;
 
         coroutine = TextWriteCharByChar(VoidRegex(dialogs[_id].dialog), dialogText);
         StartCoroutine(coroutine);
