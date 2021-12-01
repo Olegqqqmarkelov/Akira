@@ -5689,7 +5689,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 62eec71db8e440641887e2f8698bcbf5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6086,7 +6086,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 62eec71db8e440641887e2f8698bcbf5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6837,7 +6837,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0.02, z: 5.1}
     m_Rotation: {x: -0, y: 0, z: 0}
-    m_Scale: {x: 0.7657724, y: 3.3732738, z: 4.220521}
+    m_Scale: {x: 0.7657724, y: 1.4877176, z: 3.4051647}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -7152,22 +7152,31 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0
-          inSlope: 0
-          outSlope: 1
+          value: 1
+          inSlope: -2
+          outSlope: -2
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.28459167
+          value: 0.25200528
+          inSlope: -1.3284495
+          outSlope: -1.3284495
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
           time: 1
-          value: 1
-          inSlope: 1
+          value: 0
+          inSlope: 0
           outSlope: 0
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
+          inWeight: 0
+          outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
@@ -10965,7 +10974,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 789763260}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -1.542, y: 0, z: 0.11}
+  m_LocalPosition: {x: -2.498, y: 0.088, z: 0.11}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1000791564}
@@ -12648,6 +12657,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1839563235}
   - component: {fileID: 1839563234}
+  - component: {fileID: 1839563236}
+  - component: {fileID: 1839563233}
   m_Layer: 0
   m_Name: AutoDialog
   m_TagString: Untagged
@@ -12655,6 +12666,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1839563233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1839563232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c887d54606af64e4fb18e71bb83eff6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IdAutoDialog: 0
+  Name: Test0
+  dialogNumber: 0
 --- !u!65 &1839563234
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12666,8 +12692,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 3.7214355, y: 2.9470766, z: 3.8603516}
+  m_Center: {x: -1.3607178, y: 0.9735383, z: 1.4301758}
 --- !u!4 &1839563235
 Transform:
   m_ObjectHideFlags: 0
@@ -12682,6 +12708,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1839563236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1839563232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ccbff6f34c7294798828fefbb8ddbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogName: {fileID: 2057265744}
+  dialogText: {fileID: 1929482746}
+  _playerData: {fileID: 1000791562}
+  _autoDialogData: {fileID: 1839563233}
+  _playerMove: {fileID: 1000791565}
+  openDialogue: {fileID: 1146574895}
+  closeBeforExitFromTrigger: 0
 --- !u!1 &1929482744
 GameObject:
   m_ObjectHideFlags: 0
@@ -12844,7 +12889,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 62eec71db8e440641887e2f8698bcbf5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

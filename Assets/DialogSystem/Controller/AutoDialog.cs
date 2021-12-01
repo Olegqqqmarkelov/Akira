@@ -15,32 +15,45 @@ public class AutoDialog : MonoBehaviour
     [SerializeField] private AutoDialogData _autoDialogData;
     [SerializeField] private KeyboardInput _playerMove;
 
-    [SerializeField] private GameObject dialogueLetter;
     [SerializeField] private OpenDialogue openDialogue;
 
+    [SerializeField] private bool closeBeforExitFromTrigger;
+
     private bool _isActive;
+    private bool _stopDialog = false;
+    private bool _stopRekurs = false;
+    private bool _stopTriger = false;
     private int idDialog = 0;
     private float speedOfText = 0.075f;
+    private float waitBeforWrite = 3f;
     private IEnumerator coroutine;
 
     private void OnTriggerEnter(Collider other) {
-        if(_autoDialogData.IdAutoDialog == _playerData.dialogTrueIdNPC){
-            dialogueLetter.SetActive(false);
-            _playerMove.moveIsActive = false;
+        if(_stopRekurs != true && _stopTriger != true  &&_autoDialogData.IdAutoDialog == _playerData.autoDialogTrueIdTriger)
+        {
+            Rekurs();
+        }
+    }
 
+    private void Rekurs()
+    {
+        if(dialogs.Count != idDialog || dialogs.Count == 0){
+            _stopTriger = true;
             try{
                 StopCoroutine(coroutine);
             }catch{};
-
+            
             try{
                 if(dialogs.Count == 0)
-                    LoadText(_playerData.dialogTrueIdNPC);
+                    LoadText(_playerData.autoDialogTrueIdTriger);
                 WriteText(idDialog++);
             }catch{
                 openDialogue.Close();
                 dialogs.Clear();
             }   
             openDialogue.Open(); 
+        }else{
+            _stopRekurs = true;
         }
     }
 
@@ -66,9 +79,11 @@ public class AutoDialog : MonoBehaviour
     private void WriteText(int _id)
     {
         dialogName.text = dialogs[_id].name;
-
+        
         dialogText.text = "";
-        speedOfText = 0.075f;
+        speedOfText = 0.25f;
+        waitBeforWrite = 3f;
+
         coroutine = TextWriteCharByChar(VoidRegex(dialogs[_id].dialog), dialogText);
         StartCoroutine(coroutine);
     }
@@ -80,6 +95,9 @@ public class AutoDialog : MonoBehaviour
             _lineForText.text += _char.ToString();
             yield return new WaitForSeconds(speedOfText);
         }
+
+        yield return new WaitForSeconds(waitBeforWrite);
+        Rekurs();
     }
 
     private string VoidRegex(string text)
@@ -87,7 +105,6 @@ public class AutoDialog : MonoBehaviour
         string new_text;
 
         string patternVirgule = "<virgule/>";
-        string targetClear = "";
         string targetVirgule = ",";
 
         Regex regex = new Regex(patternVirgule);
@@ -105,11 +122,10 @@ public class AutoDialog : MonoBehaviour
                 string patternNewDialogNPC = "<ndn>(.*?)</ndn>";
                 Regex regexNDN = new Regex(patternNewDialogNPC);
                 _isActive = false;
-                _playerMove.moveIsActive = true;
 
                 new_text = regexNDN.Replace(new_text, "");
 
-                _playerData.dialogTrueIdNPC = Convert.ToInt32(match.Groups[1].Value);
+                _playerData.autoDialogTrueIdTriger = Convert.ToInt32(match.Groups[1].Value);
             }
 
             Match match2 = Regex.Match(new_text, "<st>(.*?)</st>");
@@ -123,19 +139,32 @@ public class AutoDialog : MonoBehaviour
 
                 speedOfText = float.Parse(match2.Groups[1].Value) / 100;
             }
+
+            Match match3 = Regex.Match(new_text, "<wbw>(.*?)</wbw>");
+            if(Convert.ToString(match3).StartsWith("<wbw>"))
+            {
+                Debug.Log(match3.Groups[1].Value);
+                string patternWaitBeforWrite = "<wbw>(.*?)</wbw>";
+                Regex regexWBW = new Regex(patternWaitBeforWrite);
+
+                new_text = regexWBW.Replace(new_text, "");
+
+                waitBeforWrite = float.Parse(match3.Groups[1].Value) / 100;
+            }
             
-            new_text = regexHS.Replace(new_text, targetClear);
+            new_text = regexHS.Replace(new_text, "");
         }
         return new_text;
     }
 
     private void OnTriggerExit(Collider other) {
-        try{
-            StopCoroutine(coroutine);
-        }catch{};
+        if(closeBeforExitFromTrigger == true){
+            try{
+                StopCoroutine(coroutine);
+            }catch{};
 
-        dialogueLetter.SetActive(false);
-        _isActive = false;
-        openDialogue.Close();
+            _isActive = false;
+            openDialogue.Close();
+        }
     }
 }

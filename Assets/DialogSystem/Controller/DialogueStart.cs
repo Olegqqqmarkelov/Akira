@@ -28,6 +28,7 @@ public class DialogueStart : MonoBehaviour
     private bool _isActive;
     private int idDialog = 0;
     private float speedOfText = 0.075f;
+    private float waitBeforWrite = 3f;
     private IEnumerator coroutine;
 
     private void OnTriggerEnter(Collider other) {
@@ -96,6 +97,8 @@ public class DialogueStart : MonoBehaviour
             _lineForText.text += _char.ToString();
             yield return new WaitForSeconds(speedOfText);
         }
+
+        yield return new WaitForSeconds(waitBeforWrite);
     }
 
     private string VoidRegex(string text)
@@ -137,6 +140,18 @@ public class DialogueStart : MonoBehaviour
                 new_text = regexST.Replace(new_text, "");
 
                 speedOfText = float.Parse(match2.Groups[1].Value) / 100;
+            }
+
+            Match match3 = Regex.Match(new_text, "<wbw>(.*?)</wbw>");
+            if(Convert.ToString(match3).StartsWith("<wbw>"))
+            {
+                Debug.Log(match3.Groups[1].Value);
+                string patternWaitBeforWrite = "<wbw>(.*?)</wbw>";
+                Regex regexWBW = new Regex(patternWaitBeforWrite);
+
+                new_text = regexWBW.Replace(new_text, "");
+
+                waitBeforWrite = float.Parse(match3.Groups[1].Value) / 100;
             }
             
             new_text = regexHS.Replace(new_text, targetClear);

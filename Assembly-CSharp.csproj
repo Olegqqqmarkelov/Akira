@@ -47,11 +47,13 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Script\AutoDialog\AutoDialogData.cs" />
      <Compile Include="Assets\Script\CameraScripts\FollowCamera\Camera.cs" />
      <Compile Include="Assets\DialogSystem\Controller\DialogueStart.cs" />
      <Compile Include="Assets\Script\DialogueSystem\ReadText.cs" />
      <Compile Include="Assets\DialogSystem\Controller\OpenDialogue.cs" />
      <Compile Include="Assets\Script\SaveScript\Save.cs" />
+     <Compile Include="Assets\DialogSystem\Controller\AutoDialog.cs" />
      <Compile Include="Assets\Script\PlayerScripts\PlayerData\PlayerD.cs" />
      <Compile Include="Assets\Script\PlayerScripts\MovePlayer\KeyboardInput.cs" />
      <Compile Include="Assets\Script\PlayerScripts\MovePlayer\PhysicsMovement.cs" />
