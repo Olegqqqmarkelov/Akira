@@ -8,8 +8,12 @@ public class PlayerD : MonoBehaviour
     [SerializeField] SaveSystem _saveSystem;
 
     public int level = 0;
-    public int dialogId = 0;
-    public int autoDialogId = 0;
+    public Dictionary<int,int> dialogId = new Dictionary<int,int>(){
+        {0,0},
+    };
+    public Dictionary<int,int> autoDialogId = new Dictionary<int,int>(){
+        {0,0},
+    };
     public int dialogTrueIdNPC = 0;
     public int autoDialogTrueIdTriger = 0;
     public int hp = 100;

@@ -20,13 +20,19 @@ public class AutoDialog : MonoBehaviour
     [SerializeField] private bool closeBeforExitFromTrigger;
 
     private bool _isActive;
-    private bool _stopDialog = false;
     private bool _stopRekurs = false;
     private bool _stopTriger = false;
     private int idDialog = 0;
     private float speedOfText = 0.1f;
     private float waitBeforWrite = 2f;
     private IEnumerator coroutine;
+
+    private void Awake()
+    {
+        try{
+            idDialog = _playerData.autoDialogId[_autoDialogData.IdAutoDialog];
+        }catch{_playerData.autoDialogId.Add(_autoDialogData.IdAutoDialog,0);};
+    }
 
     private void OnTriggerEnter(Collider other) {
         if(_stopRekurs != true && _stopTriger != true  &&_autoDialogData.IdAutoDialog == _playerData.autoDialogTrueIdTriger)
@@ -80,6 +86,8 @@ public class AutoDialog : MonoBehaviour
 
     private void WriteText(int _id)
     {
+        _playerData.autoDialogId[_autoDialogData.IdAutoDialog] = _id;
+
         dialogName.text = dialogs[_id].name;
         
         dialogText.text = "";

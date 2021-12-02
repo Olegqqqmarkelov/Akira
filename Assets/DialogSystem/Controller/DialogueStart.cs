@@ -28,8 +28,15 @@ public class DialogueStart : MonoBehaviour
     private bool _isActive;
     private int idDialog = 0;
     private float speedOfText = 0.075f;
-    private float waitBeforWrite = 3f;
+    private float waitBeforWrite = 1f;
     private IEnumerator coroutine;
+
+    private void Awake()
+    {
+        try{
+            idDialog = _playerData.dialogId[_npcData.IdNpc];
+        }catch{_playerData.dialogId.Add(_npcData.IdNpc,0);};
+    }
 
     private void OnTriggerEnter(Collider other) {
         if(_npcData.IdNpc == _playerData.dialogTrueIdNPC){
@@ -82,10 +89,14 @@ public class DialogueStart : MonoBehaviour
 
     private void WriteText(int _id)
     {
+        _playerData.dialogId[_npcData.IdNpc] = _id;
+
         dialogName.text = dialogs[_id].name;
 
         dialogText.text = "";
         speedOfText = 0.075f;
+        waitBeforWrite = 1f;
+
         coroutine = TextWriteCharByChar(VoidRegex(dialogs[_id].dialog), dialogText);
         StartCoroutine(coroutine);
     }

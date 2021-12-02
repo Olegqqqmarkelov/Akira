@@ -6,8 +6,8 @@ using System.Collections.Generic;
 public class PlayerData
 {
     public int level;
-    public int dialogId;
-    public int autoDialogId;
+    public Dictionary<int,int> dialogId;
+    public Dictionary<int,int> autoDialogId;
     public int dialogTrueIdNPC;
     public int autoDialogTrueIdTriger;
     public int hp;
