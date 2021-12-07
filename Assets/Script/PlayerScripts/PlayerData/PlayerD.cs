@@ -16,6 +16,7 @@ public class PlayerD : MonoBehaviour
     };
     public int dialogTrueIdNPC = 0;
     public int autoDialogTrueIdTriger = 0;
+    public int respect = 100;
     public int hp = 100;
     public int saveSpawn = 0;  
 
@@ -29,6 +30,7 @@ public class PlayerD : MonoBehaviour
         autoDialogId = data.autoDialogId;
         dialogTrueIdNPC = data.dialogTrueIdNPC;
         autoDialogTrueIdTriger = data.autoDialogTrueIdTriger;
+        respect = data.respect;
         hp = data.hp;
         saveSpawn = data.saveSpawn;
     }

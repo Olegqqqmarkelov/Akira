@@ -10,6 +10,7 @@ public class PlayerData
     public Dictionary<int,int> autoDialogId;
     public int dialogTrueIdNPC;
     public int autoDialogTrueIdTriger;
+    public int respect;
     public int hp;
     public int saveSpawn;
 
@@ -20,6 +21,7 @@ public class PlayerData
         autoDialogId = player.autoDialogId;
         dialogTrueIdNPC = player.dialogTrueIdNPC;
         autoDialogTrueIdTriger = player.autoDialogTrueIdTriger;
+        respect = player.respect;
         hp = player.hp;
         saveSpawn = player.saveSpawn;
     }
