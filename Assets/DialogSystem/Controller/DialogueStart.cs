@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
 
 public class DialogModel
 {
@@ -21,13 +20,14 @@ public class DialogueStart : MonoBehaviour
     [SerializeField] private PlayerD _playerData;
     [SerializeField] private NPCData _npcData;
     [SerializeField] private KeyboardInput _playerMove;
+    [SerializeField] private VoidRegex vr;
 
     [SerializeField] private GameObject dialogueLetter;
     [SerializeField] private OpenDialogue openDialogue;
 
     private bool _isActive;
     private int idDialog = 0;
-    private float speedOfText = 0.075f;
+    private float speedOfText = 0.1f;
     private float waitBeforWrite = 1f;
     private IEnumerator coroutine;
 
@@ -97,8 +97,27 @@ public class DialogueStart : MonoBehaviour
         speedOfText = 0.075f;
         waitBeforWrite = 1f;
 
-        coroutine = TextWriteCharByChar(VoidRegex(dialogs[_id].dialog), dialogText);
+        Dictionary<int, string> result = vr.voidRegex(dialogs[_id].dialog);
+        ResultCommand(result);
+
+        coroutine = TextWriteCharByChar(result[0], dialogText);
         StartCoroutine(coroutine);
+    }
+
+    private void ResultCommand(Dictionary<int, string> result)
+    {
+        if (result[1] != "")_playerData.dialogTrueIdNPC = Convert.ToInt32(result[1]);
+        speedOfText = float.Parse(result[2]) / 100;
+        waitBeforWrite = float.Parse(result[3]) / 100;
+
+        if (result[4] == "0")
+        {
+            _isActive = false;
+        }
+        if (result[5] == "1")
+        {
+            _playerMove.moveIsActive = true;
+        }
     }
 
     private IEnumerator TextWriteCharByChar(string text, Text _lineForText) 
@@ -112,7 +131,7 @@ public class DialogueStart : MonoBehaviour
         yield return new WaitForSeconds(waitBeforWrite);
     }
 
-    private string VoidRegex(string text)
+    /*private string VoidRegex(string text)
     {
         string new_text;
 
@@ -168,7 +187,7 @@ public class DialogueStart : MonoBehaviour
             new_text = regexHS.Replace(new_text, targetClear);
         }
         return new_text;
-    }
+    }*/
 
     private void OnTriggerExit(Collider other) {
         try{

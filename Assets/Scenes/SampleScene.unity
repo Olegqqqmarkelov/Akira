@@ -6005,6 +6005,7 @@ GameObject:
   - component: {fileID: 730472676}
   - component: {fileID: 730472675}
   - component: {fileID: 730472678}
+  - component: {fileID: 730472674}
   m_Layer: 0
   m_Name: TriggerZone
   m_TagString: Untagged
@@ -6026,6 +6027,18 @@ Transform:
   m_Father: {fileID: 1813767794}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &730472674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730472672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd527ffff0eaabb47bdeb7f0f04992d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &730472675
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6105,6 +6118,7 @@ MonoBehaviour:
   _playerData: {fileID: 1000791562}
   _npcData: {fileID: 1131215697}
   _playerMove: {fileID: 1000791565}
+  vr: {fileID: 730472674}
   dialogueLetter: {fileID: 1986702481}
   openDialogue: {fileID: 1146574895}
 --- !u!1 &739769524
@@ -11652,6 +11666,7 @@ MonoBehaviour:
   level: 0
   dialogTrueIdNPC: 0
   autoDialogTrueIdTriger: 0
+  respect: 100
   hp: 100
   saveSpawn: 0
 --- !u!33 &1000791563
@@ -12870,6 +12885,7 @@ GameObject:
   - component: {fileID: 1734623636}
   - component: {fileID: 1734623635}
   - component: {fileID: 1734623634}
+  - component: {fileID: 1734623637}
   m_Layer: 0
   m_Name: TriggerZone
   m_TagString: Untagged
@@ -12908,6 +12924,7 @@ MonoBehaviour:
   _playerData: {fileID: 1000791562}
   _npcData: {fileID: 1522446414}
   _playerMove: {fileID: 1000791565}
+  vr: {fileID: 1734623637}
   dialogueLetter: {fileID: 783154975}
   openDialogue: {fileID: 1146574895}
 --- !u!135 &1734623635
@@ -12931,6 +12948,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1734623632}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1734623637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734623632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd527ffff0eaabb47bdeb7f0f04992d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1770209547
 GameObject:
   m_ObjectHideFlags: 0
@@ -13509,6 +13538,7 @@ GameObject:
   - component: {fileID: 2109548751}
   - component: {fileID: 2109548748}
   - component: {fileID: 2109548749}
+  - component: {fileID: 2109548750}
   m_Layer: 0
   m_Name: TriggerZone
   m_TagString: Untagged
@@ -13560,8 +13590,21 @@ MonoBehaviour:
   _playerData: {fileID: 1000791562}
   _npcData: {fileID: 1812594012}
   _playerMove: {fileID: 1000791565}
+  vr: {fileID: 2109548750}
   dialogueLetter: {fileID: 564865351}
   openDialogue: {fileID: 1146574895}
+--- !u!114 &2109548750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109548746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd527ffff0eaabb47bdeb7f0f04992d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &2109548751
 MeshFilter:
   m_ObjectHideFlags: 0
