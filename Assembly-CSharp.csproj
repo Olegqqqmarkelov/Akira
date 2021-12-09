@@ -67,7 +67,6 @@
     <Compile Include="Assets\Script\SaveScript\SaveSystem.cs" />
     <Compile Include="Assets\Script\SaveScript\PlayerData.cs" />
     <Compile Include="Assets\Script\PlayerScripts\MovePlayer\SurfaceSlider.cs" />
-    <Compile Include="Assets\DialogSystem\Controller\VoidRegex.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Dialog Command.txt" />

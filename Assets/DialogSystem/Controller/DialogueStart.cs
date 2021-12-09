@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 public class DialogModel
 {
@@ -20,7 +21,6 @@ public class DialogueStart : MonoBehaviour
     [SerializeField] private PlayerD _playerData;
     [SerializeField] private NPCData _npcData;
     [SerializeField] private KeyboardInput _playerMove;
-    [SerializeField] private VoidRegex vr;
 
     [SerializeField] private GameObject dialogueLetter;
     [SerializeField] private OpenDialogue openDialogue;
@@ -97,41 +97,11 @@ public class DialogueStart : MonoBehaviour
         speedOfText = 0.075f;
         waitBeforWrite = 1f;
 
-        Dictionary<int, string> result = vr.voidRegex(dialogs[_id].dialog);
-        ResultCommand(result);
-
-        coroutine = TextWriteCharByChar(result[0], dialogText);
+        coroutine = TextWriteCharByChar(VoidRegex(dialogs[_id].dialog), dialogText);
         StartCoroutine(coroutine);
     }
 
-    private void ResultCommand(Dictionary<int, string> result)
-    {
-        if (result[1] != "")_playerData.dialogTrueIdNPC = Convert.ToInt32(result[1]);
-        speedOfText = float.Parse(result[2]) / 100;
-        waitBeforWrite = float.Parse(result[3]) / 100;
-
-        if (result[4] == "0")
-        {
-            _isActive = false;
-        }
-        if (result[5] == "1")
-        {
-            _playerMove.moveIsActive = true;
-        }
-    }
-
-    private IEnumerator TextWriteCharByChar(string text, Text _lineForText) 
-    {
-        foreach(char _char in text) 
-        {
-            _lineForText.text += _char.ToString();
-            yield return new WaitForSeconds(speedOfText);
-        }
-
-        yield return new WaitForSeconds(waitBeforWrite);
-    }
-
-    /*private string VoidRegex(string text)
+    private string VoidRegex(string text)
     {
         string new_text;
 
@@ -149,7 +119,7 @@ public class DialogueStart : MonoBehaviour
             Regex regexHS = new Regex(patternHaveScript);
 
             Match match = Regex.Match(new_text, "<ndn>(.*?)</ndn>");
-            if(Convert.ToString(match).StartsWith("<ndn>"))
+            if (Convert.ToString(match).StartsWith("<ndn>"))
             {
                 string patternNewDialogNPC = "<ndn>(.*?)</ndn>";
                 Regex regexNDN = new Regex(patternNewDialogNPC);
@@ -162,7 +132,7 @@ public class DialogueStart : MonoBehaviour
             }
 
             Match match2 = Regex.Match(new_text, "<st>(.*?)</st>");
-            if(Convert.ToString(match2).StartsWith("<st>"))
+            if (Convert.ToString(match2).StartsWith("<st>"))
             {
                 string patternSpeedOfText = "<st>(.*?)</st>";
                 Regex regexST = new Regex(patternSpeedOfText);
@@ -173,7 +143,7 @@ public class DialogueStart : MonoBehaviour
             }
 
             Match match3 = Regex.Match(new_text, "<wbw>(.*?)</wbw>");
-            if(Convert.ToString(match3).StartsWith("<wbw>"))
+            if (Convert.ToString(match3).StartsWith("<wbw>"))
             {
                 Debug.Log(match3.Groups[1].Value);
                 string patternWaitBeforWrite = "<wbw>(.*?)</wbw>";
@@ -183,11 +153,22 @@ public class DialogueStart : MonoBehaviour
 
                 waitBeforWrite = float.Parse(match3.Groups[1].Value) / 100;
             }
-            
+
             new_text = regexHS.Replace(new_text, targetClear);
         }
         return new_text;
-    }*/
+    }
+
+    private IEnumerator TextWriteCharByChar(string text, Text _lineForText) 
+    {
+        foreach(char _char in text) 
+        {
+            _lineForText.text += _char.ToString();
+            yield return new WaitForSeconds(speedOfText);
+        }
+
+        yield return new WaitForSeconds(waitBeforWrite);
+    }
 
     private void OnTriggerExit(Collider other) {
         try{
