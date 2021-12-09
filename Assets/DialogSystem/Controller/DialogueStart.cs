@@ -14,6 +14,7 @@ public class DialogModel
 
 public class DialogueStart : MonoBehaviour
 {
+    #region parameter
     [SerializeField] private Text dialogName;
     [SerializeField] private Text dialogText;
     public List<DialogModel> dialogs = new List<DialogModel>();
@@ -26,10 +27,13 @@ public class DialogueStart : MonoBehaviour
     [SerializeField] private OpenDialogue openDialogue;
 
     private bool _isActive;
+    private bool _isOnTE = false;
     private int idDialog = 0;
     private float speedOfText = 0.1f;
     private float waitBeforWrite = 1f;
     private IEnumerator coroutine;
+
+    #endregion
 
     private void Awake()
     {
@@ -38,11 +42,17 @@ public class DialogueStart : MonoBehaviour
         }catch{_playerData.dialogId.Add(_npcData.IdNpc,0);};
     }
 
-    private void OnTriggerEnter(Collider other) {
-        if(_npcData.IdNpc == _playerData.dialogTrueIdNPC){
-            dialogueLetter.SetActive(true);
+    private void OnTriggerEnter(Collider other)
+    {
+        _isOnTE = true;
+        if (_npcData.IdNpc == _playerData.dialogTrueIdNPC)
+        {
+            if (_isOnTE == true) StartCoroutine(SlowScaleUp());
+
             _isActive = true;
         }
+        if (_isOnTE != true)
+            _isOnTE = false;
     }
 
     void Update()
@@ -170,13 +180,35 @@ public class DialogueStart : MonoBehaviour
         yield return new WaitForSeconds(waitBeforWrite);
     }
 
+    private IEnumerator SlowScaleDown()
+    {
+        for (float q = 0.1f; q > 0.0001f; q -= 0.05f){
+            dialogueLetter.transform.localScale = new Vector3(q, q, q);
+            yield return new WaitForSeconds(.05f);
+        }
+        dialogueLetter.SetActive(false);
+        dialogueLetter.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+    }
+
+    private IEnumerator SlowScaleUp()
+    {
+        dialogueLetter.SetActive(true);
+        for (float q = 0.000f; q < 0.1f; q += 0.01f)
+        {
+            dialogueLetter.transform.localScale = new Vector3(q, q, q);
+            yield return new WaitForSeconds(.01f);
+        }
+        dialogueLetter.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+    }
+
     private void OnTriggerExit(Collider other) {
         try{
             StopCoroutine(coroutine);
         }catch{};
 
-        dialogueLetter.SetActive(false);
+        StartCoroutine(SlowScaleDown());
         _isActive = false;
+        _isOnTE = false;
         openDialogue.Close();
     }
 }
