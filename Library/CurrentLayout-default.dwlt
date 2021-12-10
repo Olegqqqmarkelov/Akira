@@ -19,9 +19,9 @@ MonoBehaviour:
     width: 1536
     height: 780.8
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Project
   m_RootView: {fileID: 6}
-  m_MinSize: {x: 875, y: 542}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -45,10 +45,10 @@ MonoBehaviour:
     y: 30
     width: 1536
     height: 731
-  m_MinSize: {x: 677, y: 492}
-  m_MaxSize: {x: 14001, y: 14042}
+  m_MinSize: {x: 679, y: 492}
+  m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 73
+  controlID: 17
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -94,8 +94,8 @@ MonoBehaviour:
     y: 0
     width: 201
     height: 459
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -223,10 +223,10 @@ MonoBehaviour:
     y: 0
     width: 1173
     height: 731
-  m_MinSize: {x: 402, y: 492}
+  m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 74
+  controlID: 26
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,10 +248,10 @@ MonoBehaviour:
     y: 0
     width: 1173
     height: 459
-  m_MinSize: {x: 402, y: 221}
-  m_MaxSize: {x: 8002, y: 4021}
+  m_MinSize: {x: 403, y: 221}
+  m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 75
+  controlID: 27
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -271,8 +271,8 @@ MonoBehaviour:
     y: 0
     width: 972
     height: 459
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -317,22 +317,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Maket/NPC
+    - Assets/InventorySystem/Items/Scripts
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Maket/NPC
+  - Assets/InventorySystem/Items/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Projects Unity\Akira
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 194.00043}
-    m_SelectedIDs: 46430000
-    m_LastClickedID: 17222
-    m_ExpandedIDs: 00000000dc420000de420000e0420000e2420000e4420000e6420000e8420000ea4200000c43000000ca9a3b
+    scrollPos: {x: 0, y: 41}
+    m_SelectedIDs: 52430000
+    m_LastClickedID: 17234
+    m_ExpandedIDs: 00000000e0420000e2420000e4420000e6420000e8420000ea420000ec420000ee420000024300003c4300004843000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -360,7 +360,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000dc420000de420000e0420000e2420000e4420000e6420000e8420000ea420000
+    m_ExpandedIDs: 00000000e0420000e2420000e4420000e6420000e8420000ea420000ec420000ee420000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -480,10 +480,10 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 100}
+      scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 52fbffff6a41000078410000aa410000ea410000f24100000e42000028420000
+      m_ExpandedIDs: 52fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -543,9 +543,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 497.1151, y: 23.485926, z: 433.96024}
+    m_Target: {x: 537.2083, y: 7.6526914, z: 472.00458}
     speed: 2
-    m_Value: {x: 497.1151, y: 23.485926, z: 433.96024}
+    m_Value: {x: 537.2083, y: 7.6526914, z: 472.00458}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -592,9 +592,9 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.2591754, y: -0.45619947, z: 0.14081426, w: -0.8395787}
+    m_Target: {x: -0.23000216, y: -0.4343734, z: 0.11573305, w: -0.86315423}
     speed: 2
-    m_Value: {x: -0.25875038, y: -0.45871365, z: 0.14159039, w: -0.8382018}
+    m_Value: {x: -0.23000096, y: -0.43437114, z: 0.11573245, w: -0.8631497}
   m_Size:
     m_Target: 7.071068
     speed: 2
