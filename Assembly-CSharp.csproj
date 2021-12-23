@@ -56,8 +56,10 @@
     <Compile Include="Assets\Script\AutoDialog\AutoDialogData.cs" />
     <Compile Include="Assets\Script\CameraScripts\FollowCamera\Camera.cs" />
     <Compile Include="Assets\DialogSystem\Controller\DialogueStart.cs" />
+    <Compile Include="Assets\InventorySystem\Items\Scripts\ItemObject.cs" />
     <Compile Include="Assets\DialogSystem\Controller\OpenDialogue.cs" />
     <Compile Include="Assets\Script\SaveScript\Save.cs" />
+    <Compile Include="Assets\InventorySystem\Items\Scripts\DefaultObject.cs" />
     <Compile Include="Assets\DialogSystem\Controller\AutoDialog.cs" />
     <Compile Include="Assets\Script\PlayerScripts\PlayerData\PlayerD.cs" />
     <Compile Include="Assets\Script\PlayerScripts\MovePlayer\KeyboardInput.cs" />
@@ -67,9 +69,9 @@
     <Compile Include="Assets\Script\SaveScript\SaveSystem.cs" />
     <Compile Include="Assets\Script\SaveScript\PlayerData.cs" />
     <Compile Include="Assets\Script\PlayerScripts\MovePlayer\SurfaceSlider.cs" />
-    <Compile Include="Assets\InventorySystem\Items\Scripts\ItemObject.cs" />
-    <Compile Include="Assets\InventorySystem\Items\Scripts\DefaultObject.cs" />
     <Compile Include="Assets\InventorySystem\Items\Scripts\FoodObject.cs" />
+    <Compile Include="Assets\InventorySystem\Invevtory\Scripts\InventoryObject.cs" />
+    <Compile Include="Assets\Script\Item\ItemAdd.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Dialog Command.txt" />

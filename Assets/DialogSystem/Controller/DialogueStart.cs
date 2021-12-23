@@ -27,7 +27,7 @@ public class DialogueStart : MonoBehaviour
     [SerializeField] private OpenDialogue openDialogue;
 
     private bool _isActive;
-    private bool _isOnTE = false;
+    private bool _isOnTE = true;
     private int idDialog = 0;
     private float speedOfText = 0.1f;
     private float waitBeforWrite = 1f;
@@ -37,44 +37,49 @@ public class DialogueStart : MonoBehaviour
 
     private void Awake()
     {
-        try{
+        try
+        {
             idDialog = _playerData.dialogId[_npcData.IdNpc];
-        }catch{_playerData.dialogId.Add(_npcData.IdNpc,0);};
+        }
+        catch { _playerData.dialogId.Add(_npcData.IdNpc, 0); };
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        _isOnTE = true;
-        if (_npcData.IdNpc == _playerData.dialogTrueIdNPC)
+        if (_npcData.IdNpc == _playerData.dialogTrueIdNPC && _isOnTE)
         {
             if (_isOnTE == true) StartCoroutine(SlowScaleUp());
 
             _isActive = true;
-        }
-        if (_isOnTE != true)
             _isOnTE = false;
+        }
     }
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E) && _isActive && _npcData.IdNpc == _playerData.dialogTrueIdNPC)
+        if (Input.GetKeyDown(KeyCode.E) && _isActive && _npcData.IdNpc == _playerData.dialogTrueIdNPC)
         {
             dialogueLetter.SetActive(false);
             _playerMove.moveIsActive = false;
 
-            try{
+            try
+            {
                 StopCoroutine(coroutine);
-            }catch{};
+            }
+            catch { };
 
-            try{
-                if(dialogs.Count == 0)
+            try
+            {
+                if (dialogs.Count == 0)
                     LoadText(_playerData.dialogTrueIdNPC);
                 WriteText(idDialog++);
-            }catch{
+            }
+            catch
+            {
                 openDialogue.Close();
                 dialogs.Clear();
-            }   
-            openDialogue.Open(); 
+            }
+            openDialogue.Open();
         }
     }
 
@@ -82,7 +87,7 @@ public class DialogueStart : MonoBehaviour
     {
         TextAsset dialogsData = Resources.Load<TextAsset>("DialogData/Dialog" + NameFile.ToString());
 
-        string[] data = dialogsData.text.Split(new char[] {'\n'});
+        string[] data = dialogsData.text.Split(new char[] { '\n' });
 
         for (int i = 1; i < data.Length; i++)
         {
@@ -169,9 +174,9 @@ public class DialogueStart : MonoBehaviour
         return new_text;
     }
 
-    private IEnumerator TextWriteCharByChar(string text, Text _lineForText) 
+    private IEnumerator TextWriteCharByChar(string text, Text _lineForText)
     {
-        foreach(char _char in text) 
+        foreach (char _char in text)
         {
             _lineForText.text += _char.ToString();
             yield return new WaitForSeconds(speedOfText);
@@ -182,7 +187,8 @@ public class DialogueStart : MonoBehaviour
 
     private IEnumerator SlowScaleDown()
     {
-        for (float q = 0.1f; q > 0.0001f; q -= 0.05f){
+        for (float q = 0.1f; q > 0.0001f; q -= 0.05f)
+        {
             dialogueLetter.transform.localScale = new Vector3(q, q, q);
             yield return new WaitForSeconds(.05f);
         }
@@ -201,14 +207,17 @@ public class DialogueStart : MonoBehaviour
         dialogueLetter.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
     }
 
-    private void OnTriggerExit(Collider other) {
-        try{
+    private void OnTriggerExit(Collider other)
+    {
+        try
+        {
             StopCoroutine(coroutine);
-        }catch{};
+        }
+        catch { };
 
         StartCoroutine(SlowScaleDown());
         _isActive = false;
-        _isOnTE = false;
+        _isOnTE = true;
         openDialogue.Close();
     }
 }

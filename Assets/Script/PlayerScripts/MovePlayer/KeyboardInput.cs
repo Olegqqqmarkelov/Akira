@@ -4,7 +4,9 @@ using System.Collections.Generic;
 
 public class KeyboardInput : MonoBehaviour
 {
-	[SerializeField] private PhysicsMovement _movement;
+    public InventoryObject inventory;
+
+    [SerializeField] private PhysicsMovement _movement;
     [SerializeField] private GameObject _charterSprite;
 
     [SerializeField] private ParticleSystem particle_1;
