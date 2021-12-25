@@ -26,6 +26,11 @@ public class KeyboardInput : MonoBehaviour
 
     private void LateUpdate()
     {
+        if(Input.GetKeyDown(KeyCode.I))
+        {
+            Debug.Log("Inventory open");
+        }
+
         if(moveIsActive){
             Moves();
         }
