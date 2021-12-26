@@ -32,6 +32,7 @@ public class ItemAdd : MonoBehaviour
 
     private void OnTriggerExit()
     {
+        isActive = false;
         _char.active = false;
     }
 }

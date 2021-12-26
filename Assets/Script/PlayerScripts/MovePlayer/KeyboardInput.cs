@@ -5,6 +5,8 @@ using System.Collections.Generic;
 public class KeyboardInput : MonoBehaviour
 {
     public InventoryObject inventory;
+    [SerializeField] private OpenAndCloseUI _invtUI;
+    private bool _invtActive = false;
 
     [SerializeField] private PhysicsMovement _movement;
     [SerializeField] private GameObject _charterSprite;
@@ -26,12 +28,22 @@ public class KeyboardInput : MonoBehaviour
 
     private void LateUpdate()
     {
-        if(Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.I) && _invtActive == false && moveIsActive)
         {
-            Debug.Log("Inventory open");
+            _invtUI.Open();
+
+            moveIsActive = false;
+            _invtActive = true;
+        }
+        else if(Input.GetKeyDown(KeyCode.I) && _invtActive)
+        {
+            _invtUI.Close();
+
+            moveIsActive = true;
+            _invtActive = false;
         }
 
-        if(moveIsActive){
+        if (moveIsActive){
             Moves();
         }
         if(active && moveIsActive)
