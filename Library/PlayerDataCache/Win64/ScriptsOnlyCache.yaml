@@ -23,11 +23,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnimatorStateTransitionInspector
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -116,27 +113,27 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4144}
     - Class: 114
-      Script: {instanceID: 4262}
+      Script: {instanceID: 4184}
     - Class: 114
-      Script: {instanceID: 4312}
+      Script: {instanceID: 4264}
     - Class: 114
-      Script: {instanceID: 4338}
+      Script: {instanceID: 4314}
     - Class: 114
-      Script: {instanceID: 4418}
+      Script: {instanceID: 4340}
     - Class: 114
-      Script: {instanceID: 4522}
+      Script: {instanceID: 4420}
     - Class: 114
-      Script: {instanceID: 4696}
+      Script: {instanceID: 4524}
     - Class: 114
-      Script: {instanceID: 4786}
+      Script: {instanceID: 4698}
     - Class: 114
-      Script: {instanceID: 4832}
+      Script: {instanceID: 4788}
     - Class: 114
-      Script: {instanceID: 4972}
+      Script: {instanceID: 4834}
     - Class: 114
-      Script: {instanceID: 5194}
+      Script: {instanceID: 4974}
     - Class: 114
-      Script: {instanceID: 23690}
+      Script: {instanceID: 5196}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -588,6 +585,12 @@ ScriptsOnlyBuild:
     className: SpriteShapeGeometryCache
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: OpenAndCloseUI
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -730,12 +733,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: TouchInputModule
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: OpenAndCloseUI
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
