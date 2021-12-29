@@ -18,7 +18,7 @@ public class PlayerD : MonoBehaviour
     public int autoDialogTrueIdTriger = 0;
     public int respect = 100;
     public int hp = 100;
-    public int saveSpawn = 0;  
+    public int saveSpawn = 0;
 
 
     void Awake()

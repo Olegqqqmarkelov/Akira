@@ -25,8 +25,9 @@ public class SaveSystem : MonoBehaviour
     public PlayerData LoadSaveData()
     {
         string path = Application.persistentDataPath + "/player.fun";
-        if(File.Exists(path))
+        if (File.Exists(path))
         {
+            try {
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(path, FileMode.Open);
 
@@ -34,8 +35,14 @@ public class SaveSystem : MonoBehaviour
             stream.Close();
 
             return data;
-        }else{
-            Debug.LogError("Save file not found in" + path);
+            } catch(System.Exception)
+            {
+                return null;
+            }
+        }
+        else
+        {
+            Debug.LogError("Save file not found in");
             return null;
         }
     }
