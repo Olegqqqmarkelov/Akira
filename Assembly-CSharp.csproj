@@ -73,6 +73,7 @@
     <Compile Include="Assets\Script\SaveScript\PlayerData.cs" />
     <Compile Include="Assets\Script\PlayerScripts\MovePlayer\SurfaceSlider.cs" />
     <Compile Include="Assets\InventorySystem\Items\Scripts\FoodObject.cs" />
+    <Compile Include="Assets\InventorySystem\Items\Scripts\ItemDataBaseObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Dialog Command.txt" />

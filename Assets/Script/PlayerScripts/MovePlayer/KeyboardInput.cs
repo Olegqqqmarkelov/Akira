@@ -24,6 +24,7 @@ public class KeyboardInput : MonoBehaviour
     void Start()
     {
         StopParticls();
+        inventory.Load();
     }
 
     private void LateUpdate()

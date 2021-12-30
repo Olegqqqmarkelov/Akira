@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c4b09714035da246b9e566c1587d838, type: 3}
   m_Name: Chiken
   m_EditorClassIdentifier: 
-  prefab: {fileID: 4849604991343947129, guid: 97570b8430f7ef245b3c45d530befe51, type: 3}
+  prefab: {fileID: 4849604991343947129, guid: 30a40ad6cc6f7a54585fc98468af4265, type: 3}
   type: 0
   restoreHealtValue: 10
   restoreSatietyValue: 15
