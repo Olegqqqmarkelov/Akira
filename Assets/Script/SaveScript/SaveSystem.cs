@@ -7,15 +7,16 @@ using System.Runtime.Serialization.Formatters.Binary;
 public class SaveSystem : MonoBehaviour
 {
     public PlayerD player;
-    
+
     public void SaveSpawn(int IdSaveZone)
     {
+        string path = Application.persistentDataPath + "/player.fun";
+
         PlayerData pd = new PlayerData(player);
         pd.saveSpawn = IdSaveZone;
 
         BinaryFormatter formatter = new BinaryFormatter();
 
-        string path = Application.persistentDataPath + "/player.fun";
         FileStream stream = new FileStream(path, FileMode.Create);
 
         formatter.Serialize(stream, pd);
@@ -25,6 +26,7 @@ public class SaveSystem : MonoBehaviour
     public PlayerData LoadSaveData()
     {
         string path = Application.persistentDataPath + "/player.fun";
+
         if (File.Exists(path))
         {
             try {

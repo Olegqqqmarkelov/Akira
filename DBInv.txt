@@ -1,0 +1,6 @@
+{
+    "savePath": "/Inventory.data",
+    "database": {
+        "instanceID": 17094
+    }
+}

@@ -4,10 +4,12 @@ ScriptsOnlyBuild:
     - AutoDialog
     - AutoDialogData
     - Camera
+    - DefaultObject
     - DialogueStart
     - FoodObject
     - InventoryObject
     - ItemAdd
+    - ItemDataBaseObject
     - KeyboardInput
     - NPCData
     - OpenAndCloseUI
@@ -114,29 +116,33 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3590}
     - Class: 114
-      Script: {instanceID: 4146}
+      Script: {instanceID: 3740}
     - Class: 114
-      Script: {instanceID: 4186}
+      Script: {instanceID: 4064}
     - Class: 114
-      Script: {instanceID: 4266}
+      Script: {instanceID: 4148}
     - Class: 114
-      Script: {instanceID: 4316}
+      Script: {instanceID: 4188}
     - Class: 114
-      Script: {instanceID: 4342}
+      Script: {instanceID: 4268}
     - Class: 114
-      Script: {instanceID: 4422}
+      Script: {instanceID: 4318}
     - Class: 114
-      Script: {instanceID: 4526}
+      Script: {instanceID: 4344}
     - Class: 114
-      Script: {instanceID: 4700}
+      Script: {instanceID: 4424}
     - Class: 114
-      Script: {instanceID: 4790}
+      Script: {instanceID: 4528}
     - Class: 114
-      Script: {instanceID: 4836}
+      Script: {instanceID: 4702}
     - Class: 114
-      Script: {instanceID: 4976}
+      Script: {instanceID: 4792}
     - Class: 114
-      Script: {instanceID: 5198}
+      Script: {instanceID: 4838}
+    - Class: 114
+      Script: {instanceID: 4978}
+    - Class: 114
+      Script: {instanceID: 5200}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -348,7 +354,7 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
-      Hash: 0bdb3fa8e2518d24332e53b5ef52e8f4
+      Hash: 2d754e707d87dd530c9a8794f7cd6300
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: InventoryObject
@@ -480,7 +486,7 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 262ea7a3a53780c335fb55edbb6a3aaf
+      Hash: bd5651e8bb74be47ac9dfe530d8e7678
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Save
@@ -502,6 +508,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: Physics2DRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: c3784302a49bc9c4f409077e69b26c4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ItemDataBaseObject
   - hash:
       serializedVersion: 2
       Hash: da4cc51a02ce84afe2cecd27cfe6997a

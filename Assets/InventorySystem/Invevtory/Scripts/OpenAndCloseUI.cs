@@ -5,14 +5,12 @@ using UnityEngine;
 
 public class OpenAndCloseUI : MonoBehaviour
 {
-    // Start is called before the first frame update
     private Animator anim;
     [SerializeField] private KeyboardInput _keyBoard;
     [SerializeField] private ScrollRect scrollRect;
     private GameObject Content;
     private InventoryObject inventory;
 
-    //Dictionary<InventorySlot, GameObject> itemsDisplayed = new Dictionary<InventorySlot, GameObject>();
     private bool _isActive = false;
 
     void Start()

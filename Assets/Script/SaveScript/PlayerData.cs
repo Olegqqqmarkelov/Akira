@@ -8,6 +8,7 @@ public class PlayerData
     public int level;
     public Dictionary<int,int> dialogId;
     public Dictionary<int,int> autoDialogId;
+    public Dictionary<int, InventorySlot> inv;
     public int dialogTrueIdNPC;
     public int autoDialogTrueIdTriger;
     public int respect;
@@ -20,6 +21,7 @@ public class PlayerData
         dialogId = player.dialogId;
         autoDialogId = player.autoDialogId;
         dialogTrueIdNPC = player.dialogTrueIdNPC;
+        inv = player.inv;
         autoDialogTrueIdTriger = player.autoDialogTrueIdTriger;
         respect = player.respect;
         hp = player.hp;
