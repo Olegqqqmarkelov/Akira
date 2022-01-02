@@ -6159,7 +6159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bd97e7ee4ab3ac4cb4e88c103b8749a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: 7a3c8e58d562a0a43a1edc6f9720b74f, type: 2}
+  item: {fileID: 11400000, guid: cbf6c41a89bbe6041bbf7e930591b48d, type: 2}
   inv: {fileID: 1000791565}
   _char: {fileID: 1611187764}
 --- !u!135 &491900030
@@ -11778,7 +11778,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1000791564}
-  smooth: 5
+  smooth: 3
   offset: {x: 0, y: 12, z: -10}
 --- !u!1001 &997945594
 PrefabInstance:
@@ -11915,6 +11915,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _saveSystem: {fileID: 1611717773}
+  _keyBoard: {fileID: 1000791565}
   level: 1
   dialogTrueIdNPC: 0
   autoDialogTrueIdTriger: 0
@@ -13298,9 +13299,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Letter: {fileID: 1770209547}
-  _inv: {fileID: 1000791565}
   IdSaveZone: 2
+  _keyBoard: {fileID: 1000791565}
   _saveSystem: {fileID: 1611717773}
+  _plyayerData: {fileID: 1000791562}
+  database: {fileID: 11400000, guid: 38f3c33a3ebefdf4dad23df60d8f5319, type: 2}
 --- !u!135 &1611717769
 SphereCollider:
   m_ObjectHideFlags: 0

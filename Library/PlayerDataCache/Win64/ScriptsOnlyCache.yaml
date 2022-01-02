@@ -4,12 +4,12 @@ ScriptsOnlyBuild:
     - AutoDialog
     - AutoDialogData
     - Camera
+    - DataBaseIdItems
     - DefaultObject
     - DialogueStart
     - FoodObject
     - InventoryObject
     - ItemAdd
-    - ItemDataBaseObject
     - KeyboardInput
     - NPCData
     - OpenAndCloseUI
@@ -22,12 +22,8 @@ ScriptsOnlyBuild:
     - TrigerForProhibitionToMove
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
-    UnityEditor.Graphs.dll:
-    - UnityEditor.Graphs.AnimationBlendTree.Graph
-    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.Graph
-    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimatorControllerTool
+    Unity.Timeline.dll:
+    - UnityEngine.Timeline.TimelineAsset
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -88,61 +84,63 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1450}
     - Class: 114
-      Script: {instanceID: 1796}
+      Script: {instanceID: 1974}
     - Class: 114
-      Script: {instanceID: 1998}
+      Script: {instanceID: 2176}
     - Class: 114
-      Script: {instanceID: 2074}
+      Script: {instanceID: 2252}
     - Class: 114
-      Script: {instanceID: 2130}
+      Script: {instanceID: 2308}
     - Class: 114
-      Script: {instanceID: 2230}
+      Script: {instanceID: 2408}
     - Class: 114
-      Script: {instanceID: 2522}
+      Script: {instanceID: 2700}
     - Class: 114
-      Script: {instanceID: 2664}
+      Script: {instanceID: 2842}
     - Class: 114
-      Script: {instanceID: 2814}
+      Script: {instanceID: 2992}
     - Class: 114
-      Script: {instanceID: 2874}
+      Script: {instanceID: 3052}
     - Class: 114
-      Script: {instanceID: 3120}
+      Script: {instanceID: 3298}
     - Class: 114
-      Script: {instanceID: 3248}
+      Script: {instanceID: 3426}
     - Class: 114
-      Script: {instanceID: 3442}
+      Script: {instanceID: 3620}
     - Class: 114
-      Script: {instanceID: 3578}
+      Script: {instanceID: 3756}
     - Class: 114
-      Script: {instanceID: 3590}
+      Script: {instanceID: 3768}
     - Class: 114
-      Script: {instanceID: 3740}
+      Script: {instanceID: 4242}
     - Class: 114
-      Script: {instanceID: 4064}
+      Script: {instanceID: 4326}
     - Class: 114
-      Script: {instanceID: 4148}
+      Script: {instanceID: 4366}
     - Class: 114
-      Script: {instanceID: 4188}
+      Script: {instanceID: 4446}
     - Class: 114
-      Script: {instanceID: 4268}
+      Script: {instanceID: 4496}
     - Class: 114
-      Script: {instanceID: 4318}
+      Script: {instanceID: 4522}
     - Class: 114
-      Script: {instanceID: 4344}
+      Script: {instanceID: 4602}
     - Class: 114
-      Script: {instanceID: 4424}
+      Script: {instanceID: 4706}
     - Class: 114
-      Script: {instanceID: 4528}
+      Script: {instanceID: 4880}
     - Class: 114
-      Script: {instanceID: 4702}
+      Script: {instanceID: 4970}
     - Class: 114
-      Script: {instanceID: 4792}
+      Script: {instanceID: 5016}
     - Class: 114
-      Script: {instanceID: 4838}
+      Script: {instanceID: 5156}
     - Class: 114
-      Script: {instanceID: 4978}
+      Script: {instanceID: 5378}
     - Class: 114
-      Script: {instanceID: 5200}
+      Script: {instanceID: 17640}
+    - Class: 114
+      Script: {instanceID: 17760}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -300,7 +298,7 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: 21fcd4324ae43bdbc5a32f6e067e065c
+      Hash: 63422c5fd5ced464eb2542f78ac53a23
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ItemObject
@@ -354,7 +352,7 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
-      Hash: 2d754e707d87dd530c9a8794f7cd6300
+      Hash: d1db9222eaefb6a33cf67bb78b754613
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: InventoryObject
@@ -486,7 +484,7 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: bd5651e8bb74be47ac9dfe530d8e7678
+      Hash: a2d4a31c09036c263625e54f2075c520
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Save
@@ -508,12 +506,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: Physics2DRaycaster
-  - hash:
-      serializedVersion: 2
-      Hash: c3784302a49bc9c4f409077e69b26c4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ItemDataBaseObject
   - hash:
       serializedVersion: 2
       Hash: da4cc51a02ce84afe2cecd27cfe6997a
@@ -582,7 +574,7 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
-      Hash: 21fcd4324ae43bdbc5a32f6e067e065c
+      Hash: 63422c5fd5ced464eb2542f78ac53a23
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DefaultObject
@@ -636,7 +628,7 @@ ScriptsOnlyBuild:
     className: ScrollRect
   - hash:
       serializedVersion: 2
-      Hash: 1376982999d1dee36aabd5f92d80718b
+      Hash: d38f9eb3654c3ccb077c8b893502b85e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerD
@@ -732,7 +724,7 @@ ScriptsOnlyBuild:
     className: ActivationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 625e8eabfff4b9af41e79c6b4f6a9e1a
+      Hash: f1e184ad5ddd1cfa61caba46d886c71c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: FoodObject
@@ -748,6 +740,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: TouchInputModule
+  - hash:
+      serializedVersion: 2
+      Hash: c3784302a49bc9c4f409077e69b26c4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DataBaseIdItems
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity

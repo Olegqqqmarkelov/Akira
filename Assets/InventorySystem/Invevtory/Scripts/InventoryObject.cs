@@ -1,50 +1,51 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.IO;
-using System;
 
 [CreateAssetMenu(fileName = "New Inventory", menuName = "Inventory System/Inventory")]
-public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
+public class InventoryObject : ScriptableObject
 {
-    public string savePath;
-    public ItemDataBaseObject database;
     public List<InventorySlot> Container = new List<InventorySlot>();
+    public DataBaseIdItems database;
     public void AddItem(ItemObject _item, int _amount)
     {
+        bool hasItem = false;
         for (int i = 0; i < Container.Count; i++)
         {
             if(Container[i].item == _item)
             {
                 Container[i].AddAmount(_amount);
-                return;
+                hasItem = true;
+                break;
             }
         }
-        database.OnAfterDeserialize();
-        Container.Add(new InventorySlot(database.GetId[_item], _item, _amount));
+
+        if (!hasItem)
+        {
+            database.OnAfterDeserialize();
+            Container.Add(new InventorySlot(database.GetId[_item], _item, _amount));
+        }
     }
 
-
-    public void OnAfterDeserialize()
+    private void Awake()
     {
-        /*for (int i = 0; i < Container.Count; i++)
-            Container[i].item = database.GetItem[Container[i].ID];*/
     }
 
-    public void OnBeforeSerialize()
+    [ContextMenu("ClearInventory")]
+    public void ClearInventory()
     {
+        Container.Clear();
     }
 }
 
-[Serializable]
-public class InventorySlot : MonoBehaviour
+public class InventorySlot
 {
-    public int ID;
+    public int Id;
     public ItemObject item;
     public int amount;
-    public InventorySlot(int _id ,ItemObject _item, int _amount)
+    public InventorySlot(int _Id,ItemObject _item, int _amount)
     {
-        ID = _id;
+        Id = _Id;
         item = _item;
         amount = _amount;
     }

@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637737004110686328
-    m_Hash: 164478573
+      ticks: 637767201851847804
+    m_Hash: 1256420533
   m_LockFileStatus:
     m_FilePath: D:/Projects Unity/Akira/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637737004111016390
-    m_Hash: 503003653
+      ticks: 637767201851847804
+    m_Hash: 2943870838
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
@@ -125,6 +125,7 @@ m_PackageAssets:
         - 3.0.15
         - 3.0.16
         - 3.0.17
+        - 3.0.18
         - 4.0.0
         - 4.0.1
         - 4.0.2
@@ -145,6 +146,7 @@ m_PackageAssets:
         - 5.1.4
         - 5.1.5
         - 5.1.6
+        - 5.1.7
         - 6.0.0-pre.1
         - 6.0.0-pre.2
         - 6.0.0
@@ -156,11 +158,13 @@ m_PackageAssets:
         - 7.0.2
         - 7.0.3
         - 8.0.0-pre.4
+        - 8.0.0-pre.5
         compatible:
         - 5.1.4
         - 5.1.5
         - 5.1.6
-        verified: 5.1.6
+        - 5.1.7
+        verified: 5.1.7
       dependencies:
       - name: com.unity.mathematics
         version: 1.1.0
@@ -270,8 +274,10 @@ m_PackageAssets:
         - 1.13.5
         - 1.14.1
         - 1.14.4
+        - 1.14.7
         - 1.15.1
         - 1.15.4
+        - 1.15.7
         - 2.0.0-preview.6
         - 2.0.0-preview.8
         - 2.0.0-preview.15
@@ -290,8 +296,10 @@ m_PackageAssets:
         - 1.13.5
         - 1.14.1
         - 1.14.4
+        - 1.14.7
         - 1.15.1
         - 1.15.4
+        - 1.15.7
         - 2.0.0-preview.6
         - 2.0.0-preview.8
         - 2.0.0-preview.15
@@ -496,6 +504,7 @@ m_PackageAssets:
         - 3.0.5
         - 3.0.6
         - 3.0.7
+        - 3.0.9
         compatible:
         - 1.0.2
         - 1.0.6
@@ -522,6 +531,7 @@ m_PackageAssets:
         - 3.0.5
         - 3.0.6
         - 3.0.7
+        - 3.0.9
         verified: 2.0.7
       dependencies:
       - name: com.unity.test-framework
@@ -3195,6 +3205,7 @@ m_PackageAssets:
         - 4.0.1
         - 4.0.2
         - 4.0.3
+        - 4.0.4
         - 5.0.0-pre.1
         - 5.0.0-pre.2
         - 5.0.0
@@ -3203,10 +3214,13 @@ m_PackageAssets:
         - 6.0.0-pre.4
         - 6.0.0
         - 6.0.1
+        - 6.0.2
         - 7.0.0-pre.3
+        - 7.0.0-pre.4
         compatible:
         - 4.0.3
-        verified: 4.0.3
+        - 4.0.4
+        verified: 4.0.4
       dependencies:
       - name: com.unity.2d.sprite
         version: 1.0.0

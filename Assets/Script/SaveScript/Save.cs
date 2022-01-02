@@ -6,10 +6,12 @@ using System.Collections.Generic;
 public class Save : MonoBehaviour
 {
     [SerializeField] private GameObject Letter;
-    [SerializeField] private PlayerD data;
-    [SerializeField] private KeyboardInput _keyBoard;
     [SerializeField] public int IdSaveZone;
+    [SerializeField] private KeyboardInput _keyBoard;
     [SerializeField] SaveSystem _saveSystem;
+
+    public PlayerD _plyayerData;
+    public DataBaseIdItems database;
     private bool isActive;
 
     private void OnTriggerEnter(Collider other) {
@@ -28,11 +30,14 @@ public class Save : MonoBehaviour
         }
     }
 
-    void SaveInventory()
+    private void SaveInventory()
     {
-        for (int i = 0; i < _keyBoard.inventory.Container.Count; i++)
+        var _inv = _keyBoard.inventory.Container;
+
+        for (int i = 0; i < _inv.Count; i++)
         {
-            data.inv.Add(i, _keyBoard.inventory.Container[i]);
+            _plyayerData.inventoryItem[i]= database.GetId[_inv[i].item];
+            _plyayerData.inventoryItemAmout[i] = _inv[i].amount;
         }
     }
 
