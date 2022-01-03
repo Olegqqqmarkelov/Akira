@@ -7,6 +7,7 @@ public class OpenAndCloseUI : MonoBehaviour
 {
     // Start is called before the first frame update
     private Animator anim;
+    [SerializeField] private Animator animChar;
     [SerializeField] private KeyboardInput _keyBoard;
     [SerializeField] private ScrollRect scrollRect;
     private GameObject Content;
@@ -26,6 +27,7 @@ public class OpenAndCloseUI : MonoBehaviour
     public void Open()
     {
         anim.SetBool("SetActive", true);
+        animChar.SetBool("Open", true);
         UpdateItemsDisplay();
         _isActive = true;
     }
@@ -45,6 +47,7 @@ public class OpenAndCloseUI : MonoBehaviour
     public void Close()
     {
         anim.SetBool("SetActive", false);
+        animChar.SetBool("Open", false);
         _isActive = false;
     }
 

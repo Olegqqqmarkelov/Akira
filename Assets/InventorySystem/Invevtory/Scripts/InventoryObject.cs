@@ -27,8 +27,22 @@ public class InventoryObject : ScriptableObject
         }
     }
 
-    private void Awake()
+    public void DeleteItem(ItemObject _item, int _value, bool _allDelete)
     {
+        for (int i = 0; i < Container.Count; i++)
+        {
+            if(Container[i].item == _item)
+            {
+                if (_allDelete == true)
+                {
+                    Container.Remove(Container[i]);
+                }
+                else
+                {
+                    Container[i].MinusAmount(_value);
+                }
+            }
+        }
     }
 
     [ContextMenu("ClearInventory")]
@@ -52,5 +66,9 @@ public class InventorySlot
     public void AddAmount(int value)
     {
         amount += value;
+    }
+    public void MinusAmount(int value)
+    {
+        amount -= value;
     }
 }
