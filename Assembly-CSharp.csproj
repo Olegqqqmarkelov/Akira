@@ -64,6 +64,7 @@
     <Compile Include="Assets\InventorySystem\Items\Scripts\DefaultObject.cs" />
     <Compile Include="Assets\InventorySystem\Invevtory\Scripts\OpenAndCloseUI.cs" />
     <Compile Include="Assets\DialogSystem\Controller\AutoDialog.cs" />
+    <Compile Include="Assets\InventorySystem\Items\Scripts\DataBaseIdItems.cs" />
     <Compile Include="Assets\Script\PlayerScripts\PlayerData\PlayerD.cs" />
     <Compile Include="Assets\Script\PlayerScripts\MovePlayer\KeyboardInput.cs" />
     <Compile Include="Assets\Script\PlayerScripts\MovePlayer\PhysicsMovement.cs" />
@@ -73,7 +74,7 @@
     <Compile Include="Assets\Script\SaveScript\PlayerData.cs" />
     <Compile Include="Assets\Script\PlayerScripts\MovePlayer\SurfaceSlider.cs" />
     <Compile Include="Assets\InventorySystem\Items\Scripts\FoodObject.cs" />
-    <Compile Include="Assets\InventorySystem\Items\Scripts\DataBaseIdItems.cs" />
+    <Compile Include="Assets\InventorySystem\Invevtory\Scripts\SetActiveElement.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Dialog Command.txt" />

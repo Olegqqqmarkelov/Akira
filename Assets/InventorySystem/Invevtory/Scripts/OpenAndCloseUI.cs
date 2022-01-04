@@ -10,11 +10,13 @@ public class OpenAndCloseUI : MonoBehaviour
     [SerializeField] private Animator animChar;
     [SerializeField] private KeyboardInput _keyBoard;
     [SerializeField] private ScrollRect scrollRect;
+    private SetActiveElement _setActiveScript;
     private GameObject Content;
     private InventoryObject inventory;
 
     //Dictionary<InventorySlot, GameObject> itemsDisplayed = new Dictionary<InventorySlot, GameObject>();
     private bool _isActive = false;
+    private int setIdActiveItemOnInv = 0;
 
     void Start()
     {
@@ -34,12 +36,17 @@ public class OpenAndCloseUI : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.W) && _isActive)
+        if (Input.GetKeyDown(KeyCode.W) && _isActive)
         {
             scrollRect.verticalNormalizedPosition += Time.deltaTime;
+
+            SetPassiveItem();
+            SetActiveItem(-1);
         }
-        if (Input.GetKey(KeyCode.S) && _isActive)
+        if (Input.GetKeyDown(KeyCode.S) && _isActive)
         {
+            SetPassiveItem();
+            SetActiveItem(1);
             scrollRect.verticalNormalizedPosition -= Time.deltaTime;
         }
 
@@ -49,6 +56,37 @@ public class OpenAndCloseUI : MonoBehaviour
         anim.SetBool("SetActive", false);
         animChar.SetBool("Open", false);
         _isActive = false;
+    }
+
+    void SetActiveItem(int _number)
+    {
+        if(setIdActiveItemOnInv + _number != inventory.Container.Count && _number == 1)
+        {
+            setIdActiveItemOnInv++;
+        } else if(setIdActiveItemOnInv + _number != -1 && _number == -1)
+        {
+            setIdActiveItemOnInv--;
+        }
+
+        foreach (Transform child in Content.transform)
+        {
+            if (child.gameObject.name == setIdActiveItemOnInv.ToString())
+            {
+                _setActiveScript = child.GetComponent<SetActiveElement>();
+
+                if (_setActiveScript != null)
+                {
+                    _setActiveScript.SetActived();
+                    return;
+                }
+            }
+        }
+    }
+
+    void SetPassiveItem()
+    {
+        if(_setActiveScript != null)
+            _setActiveScript.SetPassived();
     }
 
     void UpdateItemsDisplay()
@@ -63,6 +101,7 @@ public class OpenAndCloseUI : MonoBehaviour
 
             childObject.transform.parent = Content.transform;
             childObject.transform.localScale = Vector3.one;
+            childObject.name = i.ToString();
 
             GetChildWithName(childObject, "Amount").GetComponent<Text>().text = 
                 inventory.Container[i].amount.ToString();

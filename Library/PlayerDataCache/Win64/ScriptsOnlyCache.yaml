@@ -18,12 +18,17 @@ ScriptsOnlyBuild:
     - PlayerD
     - Save
     - SaveSystem
+    - SetActiveElement
     - SurfaceSlider
     - TrigerForProhibitionToMove
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
-    Unity.Timeline.dll:
-    - UnityEngine.Timeline.TimelineAsset
+    UnityEditor.Graphs.dll:
+    - UnityEditor.Graphs.AnimationBlendTree.Graph
+    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.Graph
+    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -34,6 +39,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.ContentSizeFitter
     - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.GridLayoutGroup
     - UnityEngine.UI.Image
     - UnityEngine.UI.Mask
     - UnityEngine.UI.ScrollRect
@@ -84,63 +90,67 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1450}
     - Class: 114
-      Script: {instanceID: 1974}
+      Script: {instanceID: 1796}
     - Class: 114
-      Script: {instanceID: 2176}
+      Script: {instanceID: 1998}
     - Class: 114
-      Script: {instanceID: 2252}
+      Script: {instanceID: 2074}
     - Class: 114
-      Script: {instanceID: 2308}
+      Script: {instanceID: 2130}
     - Class: 114
-      Script: {instanceID: 2408}
+      Script: {instanceID: 2230}
     - Class: 114
-      Script: {instanceID: 2700}
+      Script: {instanceID: 2522}
     - Class: 114
-      Script: {instanceID: 2842}
+      Script: {instanceID: 2664}
     - Class: 114
-      Script: {instanceID: 2992}
+      Script: {instanceID: 2814}
     - Class: 114
-      Script: {instanceID: 3052}
+      Script: {instanceID: 2874}
     - Class: 114
-      Script: {instanceID: 3298}
+      Script: {instanceID: 3120}
     - Class: 114
-      Script: {instanceID: 3426}
+      Script: {instanceID: 3248}
     - Class: 114
-      Script: {instanceID: 3620}
+      Script: {instanceID: 3442}
     - Class: 114
-      Script: {instanceID: 3756}
+      Script: {instanceID: 3578}
     - Class: 114
-      Script: {instanceID: 3768}
+      Script: {instanceID: 3590}
     - Class: 114
-      Script: {instanceID: 4242}
+      Script: {instanceID: 4062}
     - Class: 114
-      Script: {instanceID: 4326}
+      Script: {instanceID: 4146}
     - Class: 114
-      Script: {instanceID: 4366}
+      Script: {instanceID: 4186}
     - Class: 114
-      Script: {instanceID: 4446}
+      Script: {instanceID: 4266}
     - Class: 114
-      Script: {instanceID: 4496}
+      Script: {instanceID: 4270}
     - Class: 114
-      Script: {instanceID: 4522}
+      Script: {instanceID: 4318}
     - Class: 114
-      Script: {instanceID: 4602}
+      Script: {instanceID: 4344}
     - Class: 114
-      Script: {instanceID: 4706}
+      Script: {instanceID: 4424}
     - Class: 114
-      Script: {instanceID: 4880}
+      Script: {instanceID: 4528}
     - Class: 114
-      Script: {instanceID: 4970}
+      Script: {instanceID: 4702}
     - Class: 114
-      Script: {instanceID: 5016}
+      Script: {instanceID: 4792}
     - Class: 114
-      Script: {instanceID: 5156}
+      Script: {instanceID: 4838}
     - Class: 114
-      Script: {instanceID: 5378}
+      Script: {instanceID: 4978}
     - Class: 114
-      Script: {instanceID: 17640}
+      Script: {instanceID: 5200}
     - Class: 114
-      Script: {instanceID: 17760}
+      Script: {instanceID: 5238}
+    - Class: 114
+      Script: {instanceID: 17124}
+    - Class: 114
+      Script: {instanceID: 19116}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -592,7 +602,7 @@ ScriptsOnlyBuild:
     className: SpriteShapeGeometryCache
   - hash:
       serializedVersion: 2
-      Hash: 98496547e012ac1872f84dde975b0f00
+      Hash: c0014183d6e3a7819b6db04adb1b050d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: OpenAndCloseUI
@@ -608,6 +618,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: AutoDialog
+  - hash:
+      serializedVersion: 2
+      Hash: c3784302a49bc9c4f409077e69b26c4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DataBaseIdItems
   - hash:
       serializedVersion: 2
       Hash: 3165968ba45c74472d279ba04455fccb
@@ -742,10 +758,10 @@ ScriptsOnlyBuild:
     className: TouchInputModule
   - hash:
       serializedVersion: 2
-      Hash: c3784302a49bc9c4f409077e69b26c4f
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: DataBaseIdItems
+    className: SetActiveElement
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
