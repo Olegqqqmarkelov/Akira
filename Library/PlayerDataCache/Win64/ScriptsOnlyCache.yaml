@@ -9,6 +9,7 @@ ScriptsOnlyBuild:
     - DialogueStart
     - FoodObject
     - InventoryObject
+    - InventoryXScroll
     - ItemAdd
     - KeyboardInput
     - NPCData
@@ -23,12 +24,6 @@ ScriptsOnlyBuild:
     - TrigerForProhibitionToMove
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
-    UnityEditor.Graphs.dll:
-    - UnityEditor.Graphs.AnimationBlendTree.Graph
-    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.Graph
-    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -36,6 +31,7 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.ContentSizeFitter
     - UnityEngine.UI.GraphicRaycaster
@@ -43,6 +39,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Image
     - UnityEngine.UI.Mask
     - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Text
     - UnityEngine.UI.VerticalLayoutGroup
   sceneClasses:
@@ -102,55 +99,61 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2522}
     - Class: 114
-      Script: {instanceID: 2664}
+      Script: {instanceID: 2532}
     - Class: 114
-      Script: {instanceID: 2814}
+      Script: {instanceID: 2666}
     - Class: 114
-      Script: {instanceID: 2874}
+      Script: {instanceID: 2816}
     - Class: 114
-      Script: {instanceID: 3120}
+      Script: {instanceID: 2876}
     - Class: 114
-      Script: {instanceID: 3248}
+      Script: {instanceID: 3122}
     - Class: 114
-      Script: {instanceID: 3442}
+      Script: {instanceID: 3132}
     - Class: 114
-      Script: {instanceID: 3578}
+      Script: {instanceID: 3228}
     - Class: 114
-      Script: {instanceID: 3590}
+      Script: {instanceID: 3230}
     - Class: 114
-      Script: {instanceID: 4062}
+      Script: {instanceID: 3252}
     - Class: 114
-      Script: {instanceID: 4146}
+      Script: {instanceID: 3446}
     - Class: 114
-      Script: {instanceID: 4186}
+      Script: {instanceID: 3582}
     - Class: 114
-      Script: {instanceID: 4266}
+      Script: {instanceID: 3594}
+    - Class: 114
+      Script: {instanceID: 4066}
+    - Class: 114
+      Script: {instanceID: 4150}
+    - Class: 114
+      Script: {instanceID: 4190}
     - Class: 114
       Script: {instanceID: 4270}
     - Class: 114
-      Script: {instanceID: 4318}
+      Script: {instanceID: 4274}
     - Class: 114
-      Script: {instanceID: 4344}
+      Script: {instanceID: 4322}
     - Class: 114
-      Script: {instanceID: 4424}
+      Script: {instanceID: 4348}
     - Class: 114
-      Script: {instanceID: 4528}
+      Script: {instanceID: 4428}
     - Class: 114
-      Script: {instanceID: 4702}
+      Script: {instanceID: 4532}
     - Class: 114
-      Script: {instanceID: 4792}
+      Script: {instanceID: 4706}
     - Class: 114
-      Script: {instanceID: 4838}
+      Script: {instanceID: 4796}
     - Class: 114
-      Script: {instanceID: 4978}
+      Script: {instanceID: 4842}
     - Class: 114
-      Script: {instanceID: 5200}
+      Script: {instanceID: 4982}
     - Class: 114
-      Script: {instanceID: 5238}
+      Script: {instanceID: 5204}
     - Class: 114
-      Script: {instanceID: 17124}
+      Script: {instanceID: 5242}
     - Class: 114
-      Script: {instanceID: 19116}
+      Script: {instanceID: 17486}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -321,6 +324,12 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SetActiveElement
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: FbxBuildTestAssets.dll
     namespaceName: Autodesk.Fbx.BuildTests
     className: ExportEmptyFbx
@@ -444,6 +453,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Button
+  - hash:
+      serializedVersion: 2
+      Hash: 9340717efd7761afebe2095b652e813e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: InventoryXScroll
   - hash:
       serializedVersion: 2
       Hash: 349d08daa6108b9a28f8c38fd40ce96f
@@ -602,7 +617,7 @@ ScriptsOnlyBuild:
     className: SpriteShapeGeometryCache
   - hash:
       serializedVersion: 2
-      Hash: c0014183d6e3a7819b6db04adb1b050d
+      Hash: f2d99945743621fc9c4e7d84edd046da
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: OpenAndCloseUI
@@ -756,12 +771,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: TouchInputModule
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: SetActiveElement
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity

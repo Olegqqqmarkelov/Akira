@@ -5,18 +5,20 @@ using UnityEngine;
 
 public class OpenAndCloseUI : MonoBehaviour
 {
-    // Start is called before the first frame update
+    #region params
     private Animator anim;
     [SerializeField] private Animator animChar;
-    [SerializeField] private KeyboardInput _keyBoard;
+    [SerializeField] public KeyboardInput _keyBoard;
     [SerializeField] private ScrollRect scrollRect;
+    [SerializeField] private InventoryXScroll XScroll;
+    [SerializeField] private GameObject scrollGM;
     private SetActiveElement _setActiveScript;
     private GameObject Content;
     private InventoryObject inventory;
 
-    //Dictionary<InventorySlot, GameObject> itemsDisplayed = new Dictionary<InventorySlot, GameObject>();
-    private bool _isActive = false;
-    private int setIdActiveItemOnInv = 0;
+    public bool _isActive = false;
+    private int setIdActiveItemOnInv;
+    #endregion
 
     void Start()
     {
@@ -38,16 +40,25 @@ public class OpenAndCloseUI : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W) && _isActive)
         {
-            scrollRect.verticalNormalizedPosition += Time.deltaTime;
-
             SetPassiveItem();
             SetActiveItem(-1);
+
+            scrollRect.verticalNormalizedPosition += Time.deltaTime;
         }
         if (Input.GetKeyDown(KeyCode.S) && _isActive)
         {
             SetPassiveItem();
             SetActiveItem(1);
+
             scrollRect.verticalNormalizedPosition -= Time.deltaTime;
+        }
+        if (Input.GetKeyDown(KeyCode.Z) && _isActive)
+        {
+            EjectItem();
+        }
+        if (Input.GetKeyDown(KeyCode.X) && _isActive)
+        {
+            EjectItemX();
         }
 
     }
@@ -58,7 +69,41 @@ public class OpenAndCloseUI : MonoBehaviour
         _isActive = false;
     }
 
-    void SetActiveItem(int _number)
+    private void EjectItem()
+    {
+        if (inventory.Container.Count != 0 && setIdActiveItemOnInv != null)
+        {
+            inventory.DeleteItem(inventory.Container[setIdActiveItemOnInv].item, 0, true);
+            UpdateItemsDisplay();
+        }
+    }
+
+    private void EjectItemX()
+    {
+        if (inventory.Container.Count != 0 && setIdActiveItemOnInv != null)
+        {
+            _isActive = false;
+            var _item = inventory.Container[setIdActiveItemOnInv].item;
+            var _amount = inventory.Container[setIdActiveItemOnInv].amount;
+
+            if (_amount == 1)
+            {
+                inventory.DeleteItem(_item, 1, true);
+                _isActive = true;
+                UpdateItemsDisplay();
+            }
+            else
+            {
+                scrollGM.active = true;
+                XScroll.Amount = _amount;
+                XScroll.IdItem = setIdActiveItemOnInv;
+            }
+
+            UpdateItemsDisplay();
+        }
+    }
+
+    private void SetActiveItem(int _number)
     {
         if(setIdActiveItemOnInv + _number != inventory.Container.Count && _number == 1)
         {
@@ -83,20 +128,22 @@ public class OpenAndCloseUI : MonoBehaviour
         }
     }
 
-    void SetPassiveItem()
+    private void SetPassiveItem()
     {
         if(_setActiveScript != null)
             _setActiveScript.SetPassived();
     }
 
-    void UpdateItemsDisplay()
+    public void UpdateItemsDisplay()
     {
+        int count = 0;
         foreach (Transform child in Content.transform)
         {
             GameObject.Destroy(child.gameObject);
         }
         for (int i = 0; i < inventory.Container.Count ; i++)
         {
+            count = i;
             GameObject childObject = Instantiate(inventory.Container[i].item.prefab) as GameObject;
 
             childObject.transform.parent = Content.transform;
@@ -106,9 +153,10 @@ public class OpenAndCloseUI : MonoBehaviour
             GetChildWithName(childObject, "Amount").GetComponent<Text>().text = 
                 inventory.Container[i].amount.ToString();
         }
+        setIdActiveItemOnInv = (int)(count / 2);
     }
 
-    GameObject GetChildWithName(GameObject obj, string name)
+    private GameObject GetChildWithName(GameObject obj, string name)
     {
         Transform trans = obj.transform;
         Transform childTrans = trans.Find(name);

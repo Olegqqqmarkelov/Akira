@@ -41,6 +41,10 @@ public class InventoryObject : ScriptableObject
                 {
                     Container[i].MinusAmount(_value);
                 }
+                if(Container[i].amount <= 0)
+                {
+                    Container.Remove(Container[i]);
+                }
             }
         }
     }
