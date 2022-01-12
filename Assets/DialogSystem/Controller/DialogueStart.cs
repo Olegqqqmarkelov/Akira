@@ -123,6 +123,8 @@ public class DialogueStart : MonoBehaviour
         string patternVirgule = "<virgule/>";
         string targetClear = "";
         string targetVirgule = ",";
+        int idItem;
+
 
         Regex regex = new Regex(patternVirgule);
 
@@ -160,7 +162,6 @@ public class DialogueStart : MonoBehaviour
             Match match3 = Regex.Match(new_text, "<wbw>(.*?)</wbw>");
             if (Convert.ToString(match3).StartsWith("<wbw>"))
             {
-                Debug.Log(match3.Groups[1].Value);
                 string patternWaitBeforWrite = "<wbw>(.*?)</wbw>";
                 Regex regexWBW = new Regex(patternWaitBeforWrite);
 
@@ -168,6 +169,24 @@ public class DialogueStart : MonoBehaviour
 
                 waitBeforWrite = float.Parse(match3.Groups[1].Value) / 100;
             }
+
+            Match match4 = Regex.Match(new_text, "<AddItem count=(.*?)>(.*?)</AddItem>");
+            if (Convert.ToString(match4).StartsWith("<AddItem count="))
+            {
+                string patternAddItemInInventory = "<AddItem count=(.*?)>(.*?)</AddItem>";
+                Regex regexAIII = new Regex(patternAddItemInInventory);
+
+                new_text = regexAIII.Replace(new_text, "");
+
+                int count = Convert.ToInt32(match4.Groups[1].Value);
+                idItem = Convert.ToInt32(match4.Groups[2].Value);
+                Debug.Log(new_text);
+
+                ItemObject item = _playerMove.inventory.database.GetItem[idItem];
+
+                _playerMove.inventory.AddItem(item, count);
+            }
+
 
             new_text = regexHS.Replace(new_text, targetClear);
         }
