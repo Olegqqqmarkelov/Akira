@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
+
 public class DialogModel
 {
     public int id;
@@ -125,7 +126,6 @@ public class DialogueStart : MonoBehaviour
         string targetVirgule = ",";
         int idItem;
 
-
         Regex regex = new Regex(patternVirgule);
 
         new_text = regex.Replace(text, targetVirgule);
@@ -170,22 +170,24 @@ public class DialogueStart : MonoBehaviour
                 waitBeforWrite = float.Parse(match3.Groups[1].Value) / 100;
             }
 
-            Match match4 = Regex.Match(new_text, "<AddItem count=(.*?)>(.*?)</AddItem>");
-            if (Convert.ToString(match4).StartsWith("<AddItem count="))
+            #region 4
+            string patternAddItemInInventory = "<AddItem count=(.*?)>(.*?)</AddItem>";
+            MatchCollection match4 = Regex.Matches(new_text, patternAddItemInInventory);
+            Regex regexAIII = new Regex(patternAddItemInInventory);
+            new_text = regexAIII.Replace(new_text, "");
+
+            if (match4.Count > 0)
             {
-                string patternAddItemInInventory = "<AddItem count=(.*?)>(.*?)</AddItem>";
-                Regex regexAIII = new Regex(patternAddItemInInventory);
+                foreach (Match matchs in match4)
+                {
+                    int count = Convert.ToInt32(matchs.Groups[1].Value);
+                    idItem = Convert.ToInt32(matchs.Groups[2].Value);
 
-                new_text = regexAIII.Replace(new_text, "");
-
-                int count = Convert.ToInt32(match4.Groups[1].Value);
-                idItem = Convert.ToInt32(match4.Groups[2].Value);
-                Debug.Log(new_text);
-
-                ItemObject item = _playerMove.inventory.database.GetItem[idItem];
-
-                _playerMove.inventory.AddItem(item, count);
+                    ItemObject item = _playerMove.inventory.database.GetItem[idItem];
+                    _playerMove.inventory.AddItem(item, count);
+                }
             }
+            #endregion
 
 
             new_text = regexHS.Replace(new_text, targetClear);

@@ -36,14 +36,20 @@ public class InventoryObject : ScriptableObject
                 if (_allDelete == true)
                 {
                     Container.Remove(Container[i]);
-                }
-                if (Container[i].amount <= 0)
+                }else if (Container[i].amount <= 0)
                 {
                     Container.Remove(Container[i]);
                 }
                 else
                 {
-                    Container[i].MinusAmount(_value);
+                    if (Container[i].amount - _value == 0)
+                    {
+                        Container.Remove(Container[i]);
+                    }
+                    else
+                    {
+                        Container[i].MinusAmount(_value);
+                    }
                 }
             }
         }
