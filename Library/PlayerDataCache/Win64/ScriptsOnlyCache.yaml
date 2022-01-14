@@ -153,7 +153,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5242}
     - Class: 114
-      Script: {instanceID: 17486}
+      Script: {instanceID: 17504}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -299,7 +299,7 @@ ScriptsOnlyBuild:
     className: PlaymodeTestsController
   - hash:
       serializedVersion: 2
-      Hash: 0881321050f25998a610729bbd000305
+      Hash: 0abb2d992f4ac5e6d44219c40ad25407
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ItemAdd
@@ -617,7 +617,7 @@ ScriptsOnlyBuild:
     className: SpriteShapeGeometryCache
   - hash:
       serializedVersion: 2
-      Hash: f2d99945743621fc9c4e7d84edd046da
+      Hash: d95803cc3b59aff11c22c3845c1a57a3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: OpenAndCloseUI

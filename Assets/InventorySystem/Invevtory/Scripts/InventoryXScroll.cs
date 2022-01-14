@@ -30,6 +30,7 @@ public class InventoryXScroll : MonoBehaviour
     public void CloseXScroll()
     {
         InvUI._keyBoard.inventory.DeleteItem(InvUI._keyBoard.inventory.Container[IdItem].item, number, false);
+        InvUI.CreateItemBeforRemove(InvUI._keyBoard.inventory.Container[IdItem].item, number);
 
         Close();
     }

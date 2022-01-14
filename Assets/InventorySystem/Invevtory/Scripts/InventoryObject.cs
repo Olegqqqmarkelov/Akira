@@ -6,6 +6,7 @@ using UnityEngine;
 public class InventoryObject : ScriptableObject
 {
     public List<InventorySlot> Container = new List<InventorySlot>();
+
     public DataBaseIdItems database;
     public void AddItem(ItemObject _item, int _amount)
     {
@@ -36,7 +37,8 @@ public class InventoryObject : ScriptableObject
                 if (_allDelete == true)
                 {
                     Container.Remove(Container[i]);
-                }else if (Container[i].amount <= 0)
+                }
+                else if (Container[i].amount <= 0)
                 {
                     Container.Remove(Container[i]);
                 }

@@ -12,9 +12,14 @@ public class OpenAndCloseUI : MonoBehaviour
     [SerializeField] private ScrollRect scrollRect;
     [SerializeField] private InventoryXScroll XScroll;
     [SerializeField] private GameObject scrollGM;
+    [SerializeField] private GameObject Player;
     private SetActiveElement _setActiveScript;
     private GameObject Content;
     private InventoryObject inventory;
+
+
+    public GameObject prefabDefaltItem;
+    public GameObject prefabChikenItem;
 
     public bool _isActive = false;
     private int setIdActiveItemOnInv;
@@ -73,6 +78,7 @@ public class OpenAndCloseUI : MonoBehaviour
     {
         if (inventory.Container.Count != 0 && setIdActiveItemOnInv != null)
         {
+            CreateItemBeforRemove(inventory.Container[setIdActiveItemOnInv].item, inventory.Container[setIdActiveItemOnInv].amount);
             inventory.DeleteItem(inventory.Container[setIdActiveItemOnInv].item, 0, true);
             UpdateItemsDisplay();
         }
@@ -88,6 +94,7 @@ public class OpenAndCloseUI : MonoBehaviour
 
             if (_amount == 1)
             {
+                CreateItemBeforRemove(_item, 1);
                 inventory.DeleteItem(_item, 1, true);
                 _isActive = true;
                 UpdateItemsDisplay();
@@ -154,6 +161,20 @@ public class OpenAndCloseUI : MonoBehaviour
                 inventory.Container[i].amount.ToString();
         }
         setIdActiveItemOnInv = (int)(count / 2);
+    }
+
+    public void CreateItemBeforRemove(ItemObject _item, int _ammount)
+    {
+        int item = inventory.database.GetId[_item];
+        if (item == 0)
+        {
+            GameObject newGM = Instantiate(prefabChikenItem, Player.transform.position, Quaternion.identity);
+            newGM.GetComponent<ItemAdd>().ammount = _ammount;
+        }else if(item == 1)
+        {
+            GameObject newGM = Instantiate(prefabDefaltItem, Player.transform.position, Quaternion.identity);
+            newGM.GetComponent<ItemAdd>().ammount = _ammount;
+        }
     }
 
     private GameObject GetChildWithName(GameObject obj, string name)

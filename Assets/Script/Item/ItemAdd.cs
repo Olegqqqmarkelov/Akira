@@ -6,10 +6,16 @@ public class ItemAdd : MonoBehaviour
 {
     [SerializeField] private ItemObject item;
     [SerializeField] private KeyboardInput inv;
+    public int ammount = 1;
 
     [SerializeField] private GameObject _char;
 
     bool isActive = false;
+
+    void Start()
+    {
+        inv = FindObjectOfType<KeyboardInput>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -24,7 +30,7 @@ public class ItemAdd : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.E) && isActive)
         {
-            inv.inventory.AddItem(item, 1);
+            inv.inventory.AddItem(item, ammount);
 
             Destroy(gameObject);
         }
