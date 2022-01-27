@@ -70,13 +70,15 @@
     <Compile Include="Assets\Script\PlayerScripts\PlayerData\PlayerD.cs" />
     <Compile Include="Assets\Script\PlayerScripts\MovePlayer\KeyboardInput.cs" />
     <Compile Include="Assets\Script\PlayerScripts\MovePlayer\PhysicsMovement.cs" />
+    <Compile Include="Assets\Script\Light\LightFlicker.cs" />
     <Compile Include="Assets\Script\PlayerScripts\MovePlayer\TrigerForProhibitionToMove.cs" />
     <Compile Include="Assets\Script\NPC\NPCData.cs" />
     <Compile Include="Assets\Script\SaveScript\SaveSystem.cs" />
     <Compile Include="Assets\Script\SaveScript\PlayerData.cs" />
     <Compile Include="Assets\Script\PlayerScripts\MovePlayer\SurfaceSlider.cs" />
     <Compile Include="Assets\InventorySystem\Items\Scripts\FoodObject.cs" />
-    <Compile Include="Assets\Script\Light\LightFlicker.cs" />
+    <Compile Include="Assets\Script\Light\NightAndDay\LightingPreset.cs" />
+    <Compile Include="Assets\Script\Light\NightAndDay\LightingManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Dialog Command.txt" />
