@@ -12,6 +12,9 @@ ScriptsOnlyBuild:
     - InventoryXScroll
     - ItemAdd
     - KeyboardInput
+    - LightFlicker
+    - LightingManager
+    - LightingPreset
     - NPCData
     - OpenAndCloseUI
     - OpenDialogue
@@ -89,71 +92,75 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1796}
     - Class: 114
+      Script: {instanceID: 1990}
+    - Class: 114
       Script: {instanceID: 1998}
     - Class: 114
-      Script: {instanceID: 2074}
+      Script: {instanceID: 2076}
     - Class: 114
-      Script: {instanceID: 2130}
+      Script: {instanceID: 2132}
     - Class: 114
-      Script: {instanceID: 2230}
+      Script: {instanceID: 2232}
     - Class: 114
-      Script: {instanceID: 2522}
+      Script: {instanceID: 2524}
     - Class: 114
-      Script: {instanceID: 2532}
+      Script: {instanceID: 2534}
     - Class: 114
-      Script: {instanceID: 2666}
+      Script: {instanceID: 2668}
     - Class: 114
-      Script: {instanceID: 2816}
+      Script: {instanceID: 2818}
     - Class: 114
-      Script: {instanceID: 2876}
+      Script: {instanceID: 2878}
     - Class: 114
-      Script: {instanceID: 3122}
+      Script: {instanceID: 3124}
     - Class: 114
-      Script: {instanceID: 3132}
-    - Class: 114
-      Script: {instanceID: 3228}
+      Script: {instanceID: 3134}
     - Class: 114
       Script: {instanceID: 3230}
     - Class: 114
-      Script: {instanceID: 3252}
+      Script: {instanceID: 3232}
     - Class: 114
-      Script: {instanceID: 3446}
+      Script: {instanceID: 3254}
     - Class: 114
-      Script: {instanceID: 3582}
+      Script: {instanceID: 3448}
     - Class: 114
-      Script: {instanceID: 3594}
+      Script: {instanceID: 3524}
     - Class: 114
-      Script: {instanceID: 4066}
+      Script: {instanceID: 3586}
     - Class: 114
-      Script: {instanceID: 4150}
+      Script: {instanceID: 3598}
     - Class: 114
-      Script: {instanceID: 4190}
+      Script: {instanceID: 4070}
     - Class: 114
-      Script: {instanceID: 4270}
+      Script: {instanceID: 4154}
+    - Class: 114
+      Script: {instanceID: 4194}
     - Class: 114
       Script: {instanceID: 4274}
     - Class: 114
-      Script: {instanceID: 4322}
+      Script: {instanceID: 4278}
     - Class: 114
-      Script: {instanceID: 4348}
+      Script: {instanceID: 4326}
     - Class: 114
-      Script: {instanceID: 4428}
+      Script: {instanceID: 4352}
     - Class: 114
-      Script: {instanceID: 4532}
+      Script: {instanceID: 4432}
     - Class: 114
-      Script: {instanceID: 4706}
+      Script: {instanceID: 4536}
     - Class: 114
-      Script: {instanceID: 4796}
+      Script: {instanceID: 4596}
     - Class: 114
-      Script: {instanceID: 4842}
+      Script: {instanceID: 4712}
     - Class: 114
-      Script: {instanceID: 4982}
+      Script: {instanceID: 4802}
     - Class: 114
-      Script: {instanceID: 5204}
+      Script: {instanceID: 4848}
     - Class: 114
-      Script: {instanceID: 5242}
+      Script: {instanceID: 4988}
     - Class: 114
-      Script: {instanceID: 17468}
+      Script: {instanceID: 5210}
+    - Class: 114
+      Script: {instanceID: 5248}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -185,6 +192,8 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 850595691
       Script: {instanceID: 0}
     - Class: 1953259897
       Script: {instanceID: 0}
@@ -261,6 +270,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: AutoDialogData
+  - hash:
+      serializedVersion: 2
+      Hash: d494b3f7d496012f5371beacb5f544b2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LightingPreset
   - hash:
       serializedVersion: 2
       Hash: 453fd543bedb5911b5710bd2ba6a212f
@@ -497,6 +512,12 @@ ScriptsOnlyBuild:
     className: Outline
   - hash:
       serializedVersion: 2
+      Hash: 6856b0e6c4be3fe0e91e21d03ea135df
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LightingManager
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -699,6 +720,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PhysicsMovement
+  - hash:
+      serializedVersion: 2
+      Hash: 096f12fafd918b8f2043ce1cd8325252
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LightFlicker
   - hash:
       serializedVersion: 2
       Hash: 6980e81ddc615a861309d2d659cc3760

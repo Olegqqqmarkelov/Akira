@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44004944, g: 0.488546, b: 0.5687403, a: 1}
+  m_IndirectSpecularColor: {r: 0.18080258, g: 0.22633344, b: 0.30719098, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2078,7 +2078,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 477309133}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.23099995, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1000791564}
@@ -7438,7 +7438,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 739769524}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 0.681, z: 0.681}
+  m_LocalPosition: {x: 0, y: 0.45, z: 0.681}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 1000791564}
@@ -12451,7 +12451,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 789763260}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -2.498, y: 0.088, z: 0.11}
+  m_LocalPosition: {x: -2.498, y: -0.14299995, z: 0.11}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1000791564}
@@ -12777,13 +12777,13 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.41629863, b: 0, a: 1}
-  m_Intensity: 11.12
-  m_Range: 8.86
+  m_Intensity: 6.33
+  m_Range: 20
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -12840,9 +12840,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveLight: 1
-  pulseSpeed: 2
-  pulseMinimum: 5
-  pulseMaximum: 12
+  pulseSpeed: 0.3
+  pulseMinimum: 3
+  pulseMaximum: 6
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -13177,7 +13177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DirectionalLight: {fileID: 1044197780}
   Preset: {fileID: 11400000, guid: 31f52c25d7c4f7b49af60114680b74a7, type: 2}
-  TimeOfDay: 10.6
+  TimeOfDay: 14.8
   speed: 0.0001
 --- !u!1 &1008287585
 GameObject:
@@ -13595,7 +13595,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1044197779}
-  m_LocalRotation: {x: 0.04936559, y: 0.82099015, z: -0.5642509, w: 0.07182738}
+  m_LocalRotation: {x: 0.07962079, y: 0.40518886, z: -0.91006917, w: 0.035449456}
   m_LocalPosition: {x: 542.8, y: 14.59, z: 451.41998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
