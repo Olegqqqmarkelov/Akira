@@ -54,7 +54,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\AutoDialog\AutoDialogData.cs" />
-    <Compile Include="Assets\Script\CameraScripts\FollowCamera\Camera.cs" />
+    <Compile Include="Assets\Script\Light\NightAndDay\LightingPreset.cs" />
+    <Compile Include="Assets\Script\CameraScripts\FollowCamera\CameraFollow.cs" />
     <Compile Include="Assets\DialogSystem\Controller\DialogueStart.cs" />
     <Compile Include="Assets\Script\Item\ItemAdd.cs" />
     <Compile Include="Assets\InventorySystem\Items\Scripts\ItemObject.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="Assets\InventorySystem\Invevtory\Scripts\InventoryObject.cs" />
     <Compile Include="Assets\InventorySystem\Invevtory\Scripts\InventoryXScroll.cs" />
     <Compile Include="Assets\DialogSystem\Controller\OpenDialogue.cs" />
+    <Compile Include="Assets\Script\Light\NightAndDay\LightingManager.cs" />
     <Compile Include="Assets\Script\SaveScript\Save.cs" />
     <Compile Include="Assets\InventorySystem\Items\Scripts\DefaultObject.cs" />
     <Compile Include="Assets\InventorySystem\Invevtory\Scripts\OpenAndCloseUI.cs" />
@@ -77,8 +79,7 @@
     <Compile Include="Assets\Script\SaveScript\PlayerData.cs" />
     <Compile Include="Assets\Script\PlayerScripts\MovePlayer\SurfaceSlider.cs" />
     <Compile Include="Assets\InventorySystem\Items\Scripts\FoodObject.cs" />
-    <Compile Include="Assets\Script\Light\NightAndDay\LightingPreset.cs" />
-    <Compile Include="Assets\Script\Light\NightAndDay\LightingManager.cs" />
+    <Compile Include="Assets\Script\CameraScripts\FlipCameraPlayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Dialog Command.txt" />
