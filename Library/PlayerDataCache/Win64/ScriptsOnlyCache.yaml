@@ -3,10 +3,11 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - AutoDialog
     - AutoDialogData
-    - Camera
+    - CameraFollow
     - DataBaseIdItems
     - DefaultObject
     - DialogueStart
+    - FlipCameraPlayer
     - FoodObject
     - InventoryObject
     - InventoryXScroll
@@ -152,15 +153,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4712}
     - Class: 114
-      Script: {instanceID: 4802}
+      Script: {instanceID: 4798}
     - Class: 114
-      Script: {instanceID: 4848}
+      Script: {instanceID: 4804}
     - Class: 114
-      Script: {instanceID: 4988}
+      Script: {instanceID: 4850}
     - Class: 114
-      Script: {instanceID: 5210}
+      Script: {instanceID: 4990}
     - Class: 114
-      Script: {instanceID: 5248}
+      Script: {instanceID: 5212}
+    - Class: 114
+      Script: {instanceID: 5250}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -281,7 +284,7 @@ ScriptsOnlyBuild:
       Hash: 453fd543bedb5911b5710bd2ba6a212f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Camera
+    className: CameraFollow
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -698,7 +701,7 @@ ScriptsOnlyBuild:
     className: ControlPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 43b3031df19c5debbf4b319b3e7a34b9
+      Hash: 1878fd955269384fc73c9cf7bbebfbab
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: KeyboardInput
@@ -744,6 +747,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SpriteAsset
+  - hash:
+      serializedVersion: 2
+      Hash: bd493ad36627940e8b4a06aff51776f5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FlipCameraPlayer
   - hash:
       serializedVersion: 2
       Hash: 7d66ff4d2abcd92c1a3cf6b304d6277a

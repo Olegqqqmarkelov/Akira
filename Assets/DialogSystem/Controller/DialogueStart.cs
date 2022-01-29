@@ -49,10 +49,23 @@ public class DialogueStart : MonoBehaviour
     {
         if (_npcData.IdNpc == _playerData.dialogTrueIdNPC && _isOnTE)
         {
-            if (_isOnTE == true) StartCoroutine(SlowScaleUp());
+            FlipCameraPlayer cameraFlip = other.GetComponent<FlipCameraPlayer>();
 
-            _isActive = true;
-            _isOnTE = false;
+            if (cameraFlip != null)
+            {
+                if (_isOnTE == true) StartCoroutine(SlowScaleUp());
+                _isActive = true;
+
+                if (cameraFlip.reversKey == false)
+                {
+                    dialogueLetter.transform.eulerAngles = new Vector3(-45, 0, 0);
+                }
+                else
+                {
+                    dialogueLetter.transform.eulerAngles = new Vector3(-45, 180, 0);
+                }
+
+            }
         }
     }
 

@@ -19,10 +19,22 @@ public class ItemAdd : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        FlipCameraPlayer cameraFlip = other.GetComponent<FlipCameraPlayer>();
+
+        if (cameraFlip != null)
         {
-            isActive = true;
             _char.active = true;
+            isActive = true;
+
+            if (cameraFlip.reversKey == false)
+            {
+                _char.transform.eulerAngles = new Vector3(-45, 0, 0);
+            }
+            else
+            {
+                _char.transform.eulerAngles = new Vector3(-45, 180, 0);
+            }
+
         }
     }
 

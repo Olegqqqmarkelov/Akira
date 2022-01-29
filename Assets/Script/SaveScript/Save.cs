@@ -16,7 +16,21 @@ public class Save : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         Letter.SetActive(true);
-        isActive = true;
+        FlipCameraPlayer cameraFlip = other.GetComponent<FlipCameraPlayer>();
+
+        if(cameraFlip != null)
+        {
+            if (cameraFlip.reversKey == false)
+            {
+                Letter.transform.eulerAngles = new Vector3(45, 0, 0);
+            }
+            else
+            {
+                Letter.transform.eulerAngles = new Vector3(45, 180, 0);
+            }
+
+            isActive = true;
+        }
     }
 
     void Update()
