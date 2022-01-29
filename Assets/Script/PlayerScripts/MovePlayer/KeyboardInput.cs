@@ -30,7 +30,7 @@ public class KeyboardInput : MonoBehaviour
 
     private void LateUpdate()
     {
-        if(Input.GetKeyDown(KeyCode.Q))
+        if(Input.GetKeyDown(KeyCode.Q) && _flipCameraScript.permissionOnFlip)
         {
             _flipCameraScript.Flip();
         }

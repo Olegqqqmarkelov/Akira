@@ -749,7 +749,7 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAsset
   - hash:
       serializedVersion: 2
-      Hash: bd493ad36627940e8b4a06aff51776f5
+      Hash: 9445f4011e253fb31f46053a5948ec96
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: FlipCameraPlayer
