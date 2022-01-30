@@ -1,8 +1,8 @@
 Id,Name,Dialog
 0,Oleh,Yeah<virgule/> hi!
-1,Denis,Hi!
+1,Denis,<hs/>Hi! <DeleteItem count=1>0</DeleteItem>
 2,Lemon,<hs/>How do you do? <st>50</st>
 3,Oleh,<hs/>xfsfs as dasd asdas das <AddItem count=2>0</AddItem> <AddItem count=2>1</AddItem>
-4,Kto,ВАТ КАК<virgule/> кто as dsa<virgule/> dasdasdasd<virgule/> d asd
+4,Kto,<hs/>ВАТ КАК<virgule/> кто as dsa<virgule/> dasdasdasd<virgule/> d asd <ClearInventory/>
 5,Кот,<hs/>В<virgule/> пальто ddasd<virgule/> as das dsa das <ndn>3</ndn>
 6,Кот,dasdjasldasd

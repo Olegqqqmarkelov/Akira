@@ -123,8 +123,6 @@ public class DialogueStart : MonoBehaviour
         dialogName.text = dialogs[_id].name;
 
         dialogText.text = "";
-        speedOfText = 0.075f;
-        waitBeforWrite = 1f;
 
         coroutine = TextWriteCharByChar(VoidRegex(dialogs[_id].dialog), dialogText);
         StartCoroutine(coroutine);
@@ -148,6 +146,7 @@ public class DialogueStart : MonoBehaviour
             string patternHaveScript = "<hs/>";
             Regex regexHS = new Regex(patternHaveScript);
 
+            #region 1
             Match match = Regex.Match(new_text, "<ndn>(.*?)</ndn>");
             if (Convert.ToString(match).StartsWith("<ndn>"))
             {
@@ -160,7 +159,8 @@ public class DialogueStart : MonoBehaviour
 
                 _playerData.dialogTrueIdNPC = Convert.ToInt32(match.Groups[1].Value);
             }
-
+            #endregion
+            #region 2
             Match match2 = Regex.Match(new_text, "<st>(.*?)</st>");
             if (Convert.ToString(match2).StartsWith("<st>"))
             {
@@ -171,7 +171,8 @@ public class DialogueStart : MonoBehaviour
 
                 speedOfText = float.Parse(match2.Groups[1].Value) / 100;
             }
-
+            #endregion
+            #region 3
             Match match3 = Regex.Match(new_text, "<wbw>(.*?)</wbw>");
             if (Convert.ToString(match3).StartsWith("<wbw>"))
             {
@@ -182,7 +183,7 @@ public class DialogueStart : MonoBehaviour
 
                 waitBeforWrite = float.Parse(match3.Groups[1].Value) / 100;
             }
-
+            #endregion
             #region 4
             string patternAddItemInInventory = "<AddItem count=(.*?)>(.*?)</AddItem>";
             MatchCollection match4 = Regex.Matches(new_text, patternAddItemInInventory);
@@ -201,7 +202,53 @@ public class DialogueStart : MonoBehaviour
                 }
             }
             #endregion
+            #region 5
+            string patternDeleteItemInInventory = "<DeleteItem count=(.*?)>(.*?)</DeleteItem>";
+            MatchCollection match5 = Regex.Matches(new_text, patternDeleteItemInInventory);
+            Regex regexDIII = new Regex(patternDeleteItemInInventory);
+            new_text = regexDIII.Replace(new_text, "");
 
+            if (match5.Count > 0)
+            {
+                foreach (Match matchs in match5)
+                {
+                    int count = Convert.ToInt32(matchs.Groups[1].Value);
+                    idItem = Convert.ToInt32(matchs.Groups[2].Value);
+
+                    ItemObject item = _playerMove.inventory.database.GetItem[idItem];
+                    _playerMove.inventory.DeleteItem(item, count, false);
+                }
+            }
+            #endregion
+            #region 6
+            string patternDeleteAllItemInInventory = "<DeleteAllItem>(.*?)</DeleteAllItem>";
+            MatchCollection match6 = Regex.Matches(new_text, patternDeleteAllItemInInventory);
+            Regex regexDAIII = new Regex(patternDeleteAllItemInInventory);
+            new_text = regexDAIII.Replace(new_text, "");
+
+            if (match6.Count > 0)
+            {
+                foreach (Match matchs in match6)
+                {
+                    idItem = Convert.ToInt32(matchs.Groups[1].Value);
+
+                    ItemObject item = _playerMove.inventory.database.GetItem[idItem];
+                    _playerMove.inventory.DeleteItem(item, 0, true);
+                }
+            }
+            #endregion
+            #region 7
+            string patternDeleteAllInventory = "<ClearInventory/>";
+            Match match7 = Regex.Match(new_text, patternDeleteAllInventory);
+            if (match7 != null)
+            {
+                Regex regexDAI = new Regex(patternDeleteAllInventory);
+
+                new_text = regexDAI.Replace(new_text, "");
+                _playerMove.inventory.ClearInventory();
+            }
+
+            #endregion
 
             new_text = regexHS.Replace(new_text, targetClear);
         }

@@ -28,7 +28,7 @@ public class InventoryObject : ScriptableObject
         }
     }
 
-    public void DeleteItem(ItemObject _item, int _value, bool _allDelete)
+    public void DeleteItem(ItemObject _item, int _value, bool? _allDelete)
     {
         for (int i = 0; i < Container.Count; i++)
         {
