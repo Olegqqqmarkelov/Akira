@@ -93,79 +93,79 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1450}
     - Class: 114
-      Script: {instanceID: 1796}
+      Script: {instanceID: 1836}
     - Class: 114
-      Script: {instanceID: 1990}
+      Script: {instanceID: 2030}
     - Class: 114
-      Script: {instanceID: 1998}
+      Script: {instanceID: 2038}
     - Class: 114
-      Script: {instanceID: 2076}
+      Script: {instanceID: 2116}
     - Class: 114
-      Script: {instanceID: 2132}
+      Script: {instanceID: 2172}
     - Class: 114
-      Script: {instanceID: 2232}
+      Script: {instanceID: 2272}
     - Class: 114
-      Script: {instanceID: 2524}
+      Script: {instanceID: 2564}
     - Class: 114
-      Script: {instanceID: 2534}
+      Script: {instanceID: 2574}
     - Class: 114
-      Script: {instanceID: 2668}
+      Script: {instanceID: 2708}
     - Class: 114
-      Script: {instanceID: 2818}
+      Script: {instanceID: 2858}
     - Class: 114
-      Script: {instanceID: 2878}
+      Script: {instanceID: 2918}
     - Class: 114
-      Script: {instanceID: 3124}
+      Script: {instanceID: 3164}
     - Class: 114
-      Script: {instanceID: 3134}
+      Script: {instanceID: 3174}
     - Class: 114
-      Script: {instanceID: 3230}
+      Script: {instanceID: 3270}
     - Class: 114
-      Script: {instanceID: 3232}
+      Script: {instanceID: 3272}
     - Class: 114
-      Script: {instanceID: 3254}
+      Script: {instanceID: 3294}
     - Class: 114
-      Script: {instanceID: 3448}
+      Script: {instanceID: 3488}
     - Class: 114
-      Script: {instanceID: 3524}
+      Script: {instanceID: 3564}
     - Class: 114
-      Script: {instanceID: 3586}
+      Script: {instanceID: 3626}
     - Class: 114
-      Script: {instanceID: 3598}
+      Script: {instanceID: 3638}
     - Class: 114
-      Script: {instanceID: 4070}
-    - Class: 114
-      Script: {instanceID: 4154}
+      Script: {instanceID: 4110}
     - Class: 114
       Script: {instanceID: 4194}
     - Class: 114
-      Script: {instanceID: 4274}
+      Script: {instanceID: 4234}
     - Class: 114
-      Script: {instanceID: 4278}
+      Script: {instanceID: 4314}
     - Class: 114
-      Script: {instanceID: 4326}
+      Script: {instanceID: 4318}
     - Class: 114
-      Script: {instanceID: 4352}
+      Script: {instanceID: 4366}
     - Class: 114
-      Script: {instanceID: 4432}
+      Script: {instanceID: 4392}
     - Class: 114
-      Script: {instanceID: 4536}
+      Script: {instanceID: 4472}
     - Class: 114
-      Script: {instanceID: 4596}
+      Script: {instanceID: 4576}
     - Class: 114
-      Script: {instanceID: 4712}
+      Script: {instanceID: 4636}
     - Class: 114
-      Script: {instanceID: 4798}
+      Script: {instanceID: 4752}
     - Class: 114
-      Script: {instanceID: 4804}
+      Script: {instanceID: 4838}
     - Class: 114
-      Script: {instanceID: 4850}
+      Script: {instanceID: 4844}
     - Class: 114
-      Script: {instanceID: 4990}
+      Script: {instanceID: 4890}
     - Class: 114
-      Script: {instanceID: 5212}
+      Script: {instanceID: 5030}
     - Class: 114
-      Script: {instanceID: 5250}
+      Script: {instanceID: 5252}
+    - Class: 114
+      Script: {instanceID: 5290}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -703,7 +703,7 @@ ScriptsOnlyBuild:
     className: ControlPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 1878fd955269384fc73c9cf7bbebfbab
+      Hash: 9c9f23fd61a119a7f584eaef0dcff220
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: KeyboardInput

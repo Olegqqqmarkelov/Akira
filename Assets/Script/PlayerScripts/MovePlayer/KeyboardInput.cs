@@ -10,21 +10,26 @@ public class KeyboardInput : MonoBehaviour
 
     [SerializeField] private PhysicsMovement _movement;
     [SerializeField] private GameObject _charterSprite;
+    SpriteRenderer _spriteRenderer;
 
     [SerializeField] private FlipCameraPlayer _flipCameraScript;
 
     [SerializeField] private ParticleSystem particle_1;
     [SerializeField] private ParticleSystem particle_2;
     
-    [SerializeField] private GameObject _trigerForward;
-    [SerializeField] private GameObject _trigerBack;
-    [SerializeField] private GameObject _trigerLeft;
-    [SerializeField] private GameObject _trigerRight;
+    [SerializeField] private TrigerForProhibitionToMove _trigerValueForward;
+    [SerializeField] private TrigerForProhibitionToMove _trigerValueBack;
+    [SerializeField] private TrigerForProhibitionToMove _trigerValueLeft;
+    [SerializeField] private TrigerForProhibitionToMove _trigerValueRight;
+
+
     public bool moveIsActive = true;
     private bool active = false;
 
     void Start()
     {
+        _spriteRenderer = _charterSprite.GetComponent<SpriteRenderer>();
+        
         StopParticls();
     }
 
@@ -33,6 +38,7 @@ public class KeyboardInput : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Q) && _flipCameraScript.permissionOnFlip)
         {
             _flipCameraScript.Flip();
+            _spriteRenderer.flipX = !_spriteRenderer.flipX;
         }
 
         if (Input.GetKeyDown(KeyCode.I) && _invtActive == false && moveIsActive)
@@ -63,16 +69,15 @@ public class KeyboardInput : MonoBehaviour
 
     private void Moves()
     {
-        Vector3 CharterScale = _charterSprite.transform.localScale;
         active = false;
         float _speed = 2.5f;
         float vertical;
         float horizontal;
 
-        bool trigerValueForward = _trigerForward.GetComponent<TrigerForProhibitionToMove>()._boolForWalk;
-        bool trigerValueBack = _trigerBack.GetComponent<TrigerForProhibitionToMove>()._boolForWalk;
-        bool trigerValueLeft = _trigerLeft.GetComponent<TrigerForProhibitionToMove>()._boolForWalk;
-        bool trigerValueRight = _trigerRight.GetComponent<TrigerForProhibitionToMove>()._boolForWalk;
+        bool trigerValueForward = _trigerValueForward._boolForWalk;
+        bool trigerValueBack = _trigerValueBack._boolForWalk;
+        bool trigerValueLeft = _trigerValueLeft._boolForWalk;
+        bool trigerValueRight = _trigerValueRight._boolForWalk;
 
         if (_flipCameraScript.reversKey == false)
         {
@@ -91,13 +96,13 @@ public class KeyboardInput : MonoBehaviour
             if (Input.GetKey(KeyCode.A) && trigerValueLeft)
             {
                 horizontal = -1;
-                CharterScale.x = -3;
+                _spriteRenderer.flipX = true;
                 active = true;
             }
             else if (Input.GetKey(KeyCode.D) && trigerValueRight)
             {
                 horizontal = 1;
-                CharterScale.x = 3;
+                _spriteRenderer.flipX = false;
                 active = true;
             }
             else { horizontal = 0; }
@@ -125,13 +130,13 @@ public class KeyboardInput : MonoBehaviour
             if (Input.GetKey(KeyCode.D) && trigerValueRight)
             {
                 horizontal = -1;
-                CharterScale.x = 3;
+                _spriteRenderer.flipX = false;
                 active = true;
             }
             else if (Input.GetKey(KeyCode.A) && trigerValueLeft)
             {
                 horizontal = 1;
-                CharterScale.x = -3;
+                _spriteRenderer.flipX = true;
                 active = true;
             }
             else { horizontal = 0; }
@@ -147,9 +152,6 @@ public class KeyboardInput : MonoBehaviour
         {
             _speed = 3f;
         }
-
-        CharterScale.y = 3;
-        _charterSprite.transform.localScale = CharterScale;
 
         _movement.Move(new Vector3(horizontal, 0, vertical), _speed);
     }

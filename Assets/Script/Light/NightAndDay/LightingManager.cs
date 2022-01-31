@@ -1,4 +1,6 @@
 using UnityEngine;
+using System;
+using System.Collections;
 
 [ExecuteAlways]
 public class LightingManager : MonoBehaviour
@@ -10,6 +12,10 @@ public class LightingManager : MonoBehaviour
     [SerializeField, Range(0, 24)] private float TimeOfDay;
     [SerializeField] public float speed;
 
+    private void Start()
+    {
+        StartCoroutine(TrackFog());
+    }
 
     private void Update()
     {
@@ -44,6 +50,44 @@ public class LightingManager : MonoBehaviour
             DirectionalLight.transform.localRotation = Quaternion.Euler(new Vector3((timePercent * 360f) - 90f, 170f, 0));
         }
 
+    }
+
+    private IEnumerator TrackFog()
+    {
+        float fog;
+        while(true)
+        {
+            if (TimeOfDay>=18 && TimeOfDay <= 19)
+            {
+                fog = (float)Math.Sin((TimeOfDay - 18) * 5);
+                if (fog >= 0.15f)
+                {
+                    RenderSettings.fogDensity = 0.15f;
+                    yield return new WaitForSeconds(75f);
+                }
+                else {
+                    RenderSettings.fogDensity = fog;
+                }
+            }
+            else if (TimeOfDay >= 3f && TimeOfDay <= 4f)
+            {
+                fog = (float)Math.Sin((TimeOfDay - 3) * 5);
+                if (fog >= 0)
+                {
+                    RenderSettings.fogDensity = 0.15f;
+                    yield return new WaitForSeconds(75f);
+                }
+                else
+                {
+                    RenderSettings.fogDensity = fog;
+                }
+            }
+            else
+            {
+                yield return new WaitForSeconds(5f);
+            }
+            yield return new WaitForSeconds(5f);
+        }
     }
 
     //Try to find a directional light to use if we haven't set one

@@ -17,7 +17,7 @@ RenderSettings:
   m_Fog: 1
   m_FogColor: {r: 0, g: 0, b: 0, a: 1}
   m_FogMode: 2
-  m_FogDensity: 0.01
+  m_FogDensity: 0
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 1, g: 1, b: 0, a: 1}
@@ -27,7 +27,7 @@ RenderSettings:
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
-  m_HaloStrength: 0.4
+  m_HaloStrength: 1
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
@@ -13134,10 +13134,10 @@ MonoBehaviour:
   _flipCameraScript: {fileID: 1000791569}
   particle_1: {fileID: 789763262}
   particle_2: {fileID: 477309136}
-  _trigerForward: {fileID: 825364390}
-  _trigerBack: {fileID: 1568798789}
-  _trigerLeft: {fileID: 1486165190}
-  _trigerRight: {fileID: 1012183211}
+  _trigerValueForward: {fileID: 825364391}
+  _trigerValueBack: {fileID: 1568798791}
+  _trigerValueLeft: {fileID: 1486165194}
+  _trigerValueRight: {fileID: 1012183215}
   moveIsActive: 1
 --- !u!114 &1000791566
 MonoBehaviour:
@@ -13197,6 +13197,7 @@ MonoBehaviour:
   mainCamera: {fileID: 963194227}
   player: {fileID: 1000791564}
   reversKey: 0
+  permissionOnFlip: 1
 --- !u!1 &1008287585
 GameObject:
   m_ObjectHideFlags: 0

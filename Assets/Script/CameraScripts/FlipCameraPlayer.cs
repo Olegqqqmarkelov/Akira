@@ -19,6 +19,7 @@ public class FlipCameraPlayer : MonoBehaviour
             mainCamera.transform.eulerAngles = new Vector3(45, 180, 0);
 
             player.eulerAngles = new Vector3(0, 180, 0);
+            
 
             reversKey = true;
         }
