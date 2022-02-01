@@ -55,6 +55,8 @@ public class LightingManager : MonoBehaviour
     private IEnumerator TrackFog()
     {
         float fog;
+        float fog_normar = 0.15f;
+
         while(true)
         {
             if (TimeOfDay>=18 && TimeOfDay <= 19)
@@ -79,8 +81,20 @@ public class LightingManager : MonoBehaviour
                 }
                 else
                 {
-                    RenderSettings.fogDensity = fog;
+                    if (fog_normar >= 0)
+                    {
+                        RenderSettings.fogDensity = 0;
+                        fog_normar = 0.15f;
+                        Debug.Log(fog.ToString());
+                        yield return new WaitForSeconds(2500f);
+                    }
+                    else
+                    {
+                        Debug.Log(fog.ToString());
+                        RenderSettings.fogDensity = fog_normar - fog;
+                    }
                 }
+                
             }
             else
             {
